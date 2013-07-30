@@ -1,4 +1,4 @@
-package com.pukkaj.labtest;
+package couk.nucmedone.massivecyril.shared.labtest;
 
 /**
  * Java 1.4 compatible enum class for methods to calculate body surface area.

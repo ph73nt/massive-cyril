@@ -1,4 +1,4 @@
-package com.pukkaj.labtest;
+package couk.nucmedone.massivecyril.shared.labtest;
 
 /**
  * Holds the normal GFR for the patients given age.

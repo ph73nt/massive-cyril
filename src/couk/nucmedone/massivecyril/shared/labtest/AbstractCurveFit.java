@@ -1,7 +1,6 @@
-package com.pukkaj.labtest;
+package couk.nucmedone.massivecyril.shared.labtest;
 
-import com.pukkaj.labtest.exceptions.LowSampleNumberException;
-import com.pukkaj.labtest.exceptions.TimeTooShortFromAdminException;
+import couk.nucmedone.massivecyril.shared.labtest.exceptions.TimeTooShortFromAdminException;
 
 /**
  * Produce an exponential curve fit against labtest samples.

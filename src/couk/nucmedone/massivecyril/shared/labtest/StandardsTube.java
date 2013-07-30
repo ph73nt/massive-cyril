@@ -1,4 +1,4 @@
-package com.pukkaj.labtest;
+package couk.nucmedone.massivecyril.shared.labtest;
 
 
 public class StandardsTube extends AbstractCountingTube {

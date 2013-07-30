@@ -1,8 +1,8 @@
-package com.pukkaj.labtest;
+package couk.nucmedone.massivecyril.shared.labtest;
 
 import java.util.Calendar;
 
-import com.pukkaj.labtest.exceptions.StandardSensitivityException;
+import couk.nucmedone.massivecyril.shared.labtest.exceptions.StandardSensitivityException;
 
 /**
  * A class to hold parameter for counting reference standards in nuclear

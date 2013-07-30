@@ -1,8 +1,8 @@
-package com.pukkaj.labtest;
+package couk.nucmedone.massivecyril.shared.labtest;
 
 import java.util.Calendar;
 
-import com.pukkaj.labtest.exceptions.TimeTooShortFromAdminException;
+import couk.nucmedone.massivecyril.shared.labtest.exceptions.TimeTooShortFromAdminException;
 
 public class SampleTube extends AbstractCountingTube {
 
