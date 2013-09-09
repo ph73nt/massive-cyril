@@ -16,11 +16,11 @@ public class Injection {
 	private DoublePlus countsFull = new DoublePlus();
 	private DoublePlus countsResidual = new DoublePlus();
 	private DoublePlus countsBackground = new DoublePlus();
-	public DoublePlus volumeFull = new DoublePlus();
-	public DoublePlus volumeEmpty = new DoublePlus();
-	public DoublePlus volumeInjected = new DoublePlus(); 
-	public DoublePlus activityNominal = new DoublePlus();
-	public DoublePlus injectedFraction = new DoublePlus();
+	private DoublePlus volumeFull = new DoublePlus();
+	private DoublePlus volumeEmpty = new DoublePlus();
+	private DoublePlus volumeInjected = new DoublePlus(); 
+	private DoublePlus activityNominal = new DoublePlus();
+	private DoublePlus injectedFraction = new DoublePlus();
 	
 	private Calendar adminTime;
 
@@ -28,6 +28,15 @@ public class Injection {
 	private double syringeBaseErr = 0.005;
 	
 	public Injection(){}
+	
+	public Injection(double countsFull, double countsResidual, double countsBkg, double emptyWeight, double fullWeight, Calendar adminTime){
+		setPreCounts(countsFull);
+		setPostCounts(countsResidual);
+		setBackgroundCounts(countsBkg);
+		setEmptyWeight(emptyWeight, syringeBaseErr);
+		setFullWeight(fullWeight, syringeBaseErr);
+		setAdminTime(adminTime);
+	}
 	
 	/**
 	 * Set the pre-injection counts of an assayed syringe containing a full
@@ -165,10 +174,10 @@ public class Injection {
 	 * @param emptyWeight
 	 *            Weight of syringe (in grammes) before adding tracer.
 	 */
-	public void calculateVolumeInjected(DoublePlus fullWeight, DoublePlus emptyWeight, boolean injFracAssess) {
+	public DoublePlus calculateVolumeInjected(DoublePlus fullWeight, DoublePlus emptyWeight, boolean injFracAssess) {
 		weightFull = fullWeight;
 		weightEmpty = emptyWeight;
-		calculateVolumeInjected(injFracAssess);
+		return calculateVolumeInjected(injFracAssess);
 	}
 
 	/**
@@ -176,11 +185,12 @@ public class Injection {
 	 * empty weight. Results is in millilitres, assuming 1g/ml 
 	 * 
 	 */
-	public void calculateVolumeInjected(boolean injFracAssess) {
+	public DoublePlus calculateVolumeInjected(boolean injFracAssess) {
 		volumeInjected = weightFull.minus(weightEmpty);
 		if (injFracAssess) {
 			volumeInjected = volumeInjected.times(injectedFraction);
 		}
+		return volumeInjected;
 	}
 
 	/**

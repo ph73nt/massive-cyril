@@ -91,6 +91,10 @@ public class DoublePlus {
 		return div(dp.value(), dp.SD());
 	}
 	
+	public DoublePlus div(int constant) {
+		return div((double) constant);
+	}
+	
 	public DoublePlus div(double constant) {
 		DoublePlus dp = new DoublePlus();
 		dp.value = value / constant;

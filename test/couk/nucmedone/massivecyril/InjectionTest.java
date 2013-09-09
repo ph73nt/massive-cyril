@@ -64,16 +64,16 @@ public class InjectionTest extends TestCase {
 
 	public void testCalculateVolumeInjected_1(){
 		DoublePlus temp = inj.getInjectedFraction(51000, 26000, 1000, true);
-		inj.calculateVolumeInjected(new DoublePlus(100, 1), new DoublePlus(10, 1), true);
-		Assert.assertEquals(45, inj.volumeInjected.value(), tolerance);		
+		DoublePlus vol = inj.calculateVolumeInjected(new DoublePlus(100, 1), new DoublePlus(10, 1), true);
+		Assert.assertEquals(45, vol.value(), tolerance);		
 	}	
 	
 	public void testCalculateVolumeInjected_2(){
 		DoublePlus temp = inj.getInjectedFraction(51000, 26000, 1000, true);
 		inj.setFullWeight(200, 1);
 		inj.setEmptyWeight(20, 1);
-		inj.calculateVolumeInjected(true);
-		Assert.assertEquals(90, inj.volumeInjected.value(), tolerance);		
+		DoublePlus vol = inj.calculateVolumeInjected(true);
+		Assert.assertEquals(90, vol.value(), tolerance);		
 	}
 	
 }

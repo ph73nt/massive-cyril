@@ -8,6 +8,7 @@ public class SampleTube extends AbstractCountingTube {
 
 	private double density = Double.NaN;
 	private Calendar adminTime;
+	private Calendar sampleTime;
 	public double minimumSampleInterval = 60 * 60; // 1h in seconds!
 	
 	public SampleTube(String name) {
@@ -35,6 +36,10 @@ public class SampleTube extends AbstractCountingTube {
 	public void setAdminTime(Calendar adminTime) {
 		this.adminTime = adminTime;
 	}
+	
+	public void setSampleTime(Calendar sampleTime) {
+		this.sampleTime = sampleTime;
+	}
 
 	public void setDensity(double density) {
 		this.density = density;
@@ -48,6 +53,10 @@ public class SampleTube extends AbstractCountingTube {
 		DoublePlus contents = weightFull.minus(weightEmpty);
 		contents = contents.times(density);
 		return contents;
+	}
+	
+	public Calendar getSampleTime(){
+		return sampleTime;
 	}
 
 }

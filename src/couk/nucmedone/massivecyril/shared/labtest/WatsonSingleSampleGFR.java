@@ -2,38 +2,18 @@ package couk.nucmedone.massivecyril.shared.labtest;
 
 import couk.nucmedone.massivecyril.shared.labtest.exceptions.TimeTooShortFromAdminException;
 
+/**
+ * Calculate an estimation of glomererular filtration rate based on a single
+ * plasma sample. <br /><br />Reference:<br />A simple method of estimating glomerular filtration
+ * rate, WS Watson, Eur. J. Nucl. Med. 1992(19):827
+ * 
+ * @author neil
+ * 
+ */
 public class WatsonSingleSampleGFR extends GFR {
 
 	public WatsonSingleSampleGFR() throws TimeTooShortFromAdminException {
 
-		super();
-		
-		// Reference:
-		// A simple method of estimating glomerular filtration rate, WS Watson,
-		// Eur. J. Nucl. Med. 1992(19):827
-
-		double mins = samples[0].secondsFromAdmin() / 60;
-
-		// Solve the famous quadratic equation!
-		// -b/(2a) + (b^2 - 4ac).... then check if sqrt is OK
-		DoublePlus a = new DoublePlus(mins * (0.0000017 * mins - 0.0012),
-				Double.MIN_VALUE);
-		DoublePlus b = new DoublePlus((1.31 - 0.000775 * mins) * mins,
-				Double.MIN_VALUE);
-		// var3 a bit more complex:
-		// log(ExCellVol/(vol/conc)) * ECV
-		DoublePlus c = injection.volumeInjected.div(samples[0].concentration);
-		c = ExCellVol.div(c);
-		c = DoublePlus.ln(c);
-		c = c.times(ExCellVol);
-
-		DoublePlus part1 = b.times(-1d).div(a.times(2));
-		DoublePlus part2 = b.times(b).minus(a.times(c).times(4));
-		gfr = part1.plus(part2);
-
-		// get NaN for -ve number
-		gfr = DoublePlus.sqrt(gfr);
-		gfr = gfr.div(a.times(2));
 	}
 
 	public void setHalftime() {
@@ -53,7 +33,41 @@ public class WatsonSingleSampleGFR extends GFR {
 
 	public void setCurve() {
 		// TODO Auto-generated method stub
-		
+
+	}
+
+	public DoublePlus gfr() throws TimeTooShortFromAdminException {
+		double mins = samples[0].secondsFromAdmin() / 60;
+
+		// Solve the famous quadratic equation!
+		// -b/(2a) + (b^2 - 4ac).... then check if sqrt is OK
+		DoublePlus a = new DoublePlus(mins * (0.0000017 * mins - 0.0012),
+				Double.MIN_VALUE);
+		DoublePlus b = new DoublePlus((1.31 - 0.000775 * mins) * mins,
+				Double.MIN_VALUE);
+		// var3 a bit more complex:
+		// log(ExCellVol/(vol/conc)) * ECV
+		DoublePlus c = injection.calculateVolumeInjected(true).div(
+				samples[0].concentration);
+		DoublePlus exCellVol = extraCellularVolume();
+		c = exCellVol.div(c);
+		c = DoublePlus.ln(c);
+		c = c.times(exCellVol);
+
+		// Part 1 is -b/2a
+		DoublePlus part1 = b.times(-1d).div(a.times(2));
+		// Part 2 b^2 - 4ac
+		DoublePlus part2 = b.times(b).minus(a.times(c).times(4));
+		// Add together... but must be positive in the REAL world (no imaginary components of kidney function in this universe!)
+		gfr = part1.plus(part2);
+		// get NaN for -ve number
+		gfr = DoublePlus.sqrt(gfr);
+		gfr = gfr.div(a.times(2));
+		return gfr;
+	}
+	
+	protected DoublePlus extraCellularVolume(){
+		return new DoublePlus(8116.6 * BSA.bodySurfaceArea(weight, height) - 28.2, Double.MIN_NORMAL);
 	}
 
 }

@@ -1,5 +1,6 @@
 package couk.nucmedone.massivecyril.shared.labtest;
 
+import couk.nucmedone.common.patient.Patient;
 import couk.nucmedone.massivecyril.shared.labtest.exceptions.TimeTooShortFromAdminException;
 
 public abstract class GFR {
@@ -26,11 +27,11 @@ public abstract class GFR {
 	protected DoublePlus volOfDist;
 	protected DoublePlus clearanceTime;
 	protected AbstractCurveFit curve;
-	protected DoublePlus gfr;
-	protected DoublePlus ExCellVol; 
+	protected DoublePlus gfr; 
 	protected double height;
 	protected double weight;
 	protected Injection injection;
+	private Patient patient;
 	
 	protected String[] warnings = null;
 	
@@ -74,7 +75,7 @@ public abstract class GFR {
 		}
 
 		// Calculate mean
-		meanSensitivity = meanSensitivity.div((double) noStds);
+		meanSensitivity = meanSensitivity.div(noStds);
 		// Get worst result
 		DoublePlus relDiff = maxSensitivity.minus(minSensitivity);
 		relDiff = relDiff.div(meanSensitivity);
@@ -97,9 +98,6 @@ public abstract class GFR {
 //			throw new LowSampleNumberException(message);
 //		}
 		
-		ExCellVol = new DoublePlus(BSA.bodySurfaceArea(weight, height) * 8116.6 - 28.2, Double.MIN_VALUE);
-
-
 	}
 
 	/**
@@ -110,6 +108,10 @@ public abstract class GFR {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
+	}
+	
+	protected DoublePlus extraCellularVolume(){
+		return new DoublePlus();
 	}
 
 	// TODO: Find a better way of tracing errors - possibly custom exception
@@ -164,8 +166,16 @@ public abstract class GFR {
 		this.injection = inj;
 	}
 	
-	public DoublePlus gfr() {
+	public DoublePlus gfr() throws TimeTooShortFromAdminException {
 		return gfr;
+	}
+
+	public Patient getPatient() {
+		return patient;
+	}
+
+	public void setPatient(Patient patient) {
+		this.patient = patient;
 	}
 
 }
