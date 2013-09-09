@@ -56,9 +56,8 @@ public class Standard {
 		countDate = date;
 	}
 
-	public DoublePlus referenceSensitivity(Calendar refDate)
+	public DoublePlus referenceSensitivity()
 			throws StandardSensitivityException {
-		this.refDate = refDate;
 
 		// Get time difference in milliseconds
 		double decayTime = countDate.getTimeInMillis()
@@ -88,6 +87,14 @@ public class Standard {
 		}
 
 		return corSensitivity;
+	}
+
+	public Calendar getRefDate() {
+		return refDate;
+	}
+
+	public void setRefDate(Calendar refDate) {
+		this.refDate = refDate;
 	}
 
 }
