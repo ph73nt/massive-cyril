@@ -1,5 +1,7 @@
 package couk.nucmedone.massivecyril;
 
+import java.text.ParseException;
+
 import couk.nucmedone.massivecyril.shared.labtest.WatsonSingleSampleGFR;
 import couk.nucmedone.massivecyril.shared.labtest.exceptions.TimeTooShortFromAdminException;
 import junit.framework.Assert;
@@ -7,7 +9,7 @@ import junit.framework.TestCase;
 
 public class WatsonSingleSampleGFRTest extends TestCase {
 
-	public void testWatsonSingleSampleGFR(){
+	public void testWatsonSingleSampleGFR() {
 		try {
 			// Empty GFR object
 			WatsonSingleSampleGFR wsgfr = new WatsonSingleSampleGFR();
@@ -18,9 +20,12 @@ public class WatsonSingleSampleGFRTest extends TestCase {
 			// Add patient
 			wsgfr.setPatient(BNMS_2001_Audit.getPatients()[0]);
 			// Add standard
+			wsgfr.addStandard(BNMS_2001_Audit.getStandards()[0]);
 		} catch (TimeTooShortFromAdminException e) {
 			Assert.fail();
+		} catch (ParseException pe){
+			Assert.fail("Failure parsing counting date");
 		}
 	}
-	
+
 }

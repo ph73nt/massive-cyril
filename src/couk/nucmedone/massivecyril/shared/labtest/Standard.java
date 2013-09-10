@@ -26,7 +26,7 @@ public class Standard {
 	// TODO: Enable method for setting expected sensitivity
 	public DoublePlus expectedSensitivity = new DoublePlus(200000, 20000); // c/s/ml
 
-	private Calendar refDate, countDate;
+	private Calendar refDate;
 
 	// TODO: Proper method to set nuclide
 	private Nuclides nuc = Isotopes.cr51;
@@ -47,20 +47,24 @@ public class Standard {
 
 		// Compare expected volume...
 	}
+	
+	public void setEmptyWeight(DoublePlus weight){
+		tube.setEmptyWeight(weight);
+	}
 
 	public DoublePlus sensitivity() {
 		return tube.sensitivity();
 	}
 
 	public void setCountDate(Calendar date) {
-		countDate = date;
+		tube.setCountDate(date);
 	}
 
 	public DoublePlus referenceSensitivity()
 			throws StandardSensitivityException {
 
 		// Get time difference in milliseconds
-		double decayTime = countDate.getTimeInMillis()
+		double decayTime = tube.getCountDate().getTimeInMillis()
 				- refDate.getTimeInMillis();
 		decayTime *= 1000; // convert to seconds
 
@@ -95,6 +99,34 @@ public class Standard {
 
 	public void setRefDate(Calendar refDate) {
 		this.refDate = refDate;
+	}
+	
+	/**
+	 * Set the final volume used for counting the sample. The volume, for
+	 * instance, could be a nominal volume always used or an exact volume
+	 * measured. An exact volume implies a volume correction to be applied to
+	 * the counting results.
+	 * 
+	 * @param volume
+	 *            The volume (in millilitres) used for counting.
+	 */
+	public void setCountVolume(DoublePlus volume){
+		tube.setCountingVolume(volume);
+	}
+
+	/**
+	 * Set the number of counts, interval and background information collected
+	 * for this sample.
+	 * 
+	 * @param counts
+	 *            The total number of counts.
+	 */
+	public void setCounts(CorrectedCounts correctedCounts) {
+		tube.setCounts(correctedCounts);
+	}
+
+	public void setFullWeight(DoublePlus weight) {
+		tube.setFullWeight(weight);
 	}
 
 }

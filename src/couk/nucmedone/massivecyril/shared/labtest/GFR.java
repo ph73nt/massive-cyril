@@ -1,5 +1,7 @@
 package couk.nucmedone.massivecyril.shared.labtest;
 
+import java.util.ArrayList;
+
 import couk.nucmedone.common.patient.Patient;
 import couk.nucmedone.massivecyril.shared.labtest.exceptions.TimeTooShortFromAdminException;
 
@@ -32,6 +34,7 @@ public abstract class GFR {
 	protected double weight;
 	protected Injection injection;
 	private Patient patient;
+	private ArrayList<Standard> list = new ArrayList<Standard>();
 	
 	protected String[] warnings = null;
 	
@@ -98,6 +101,10 @@ public abstract class GFR {
 //			throw new LowSampleNumberException(message);
 //		}
 		
+	}
+	
+	public void addStandard(Standard standard){
+		list.add(standard);
 	}
 
 	/**

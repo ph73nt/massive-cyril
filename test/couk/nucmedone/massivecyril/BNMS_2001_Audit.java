@@ -7,11 +7,14 @@ import com.ibm.icu.text.SimpleDateFormat;
 
 import couk.nucmedone.common.patient.Patient;
 import couk.nucmedone.common.patient.PatientName;
+import couk.nucmedone.massivecyril.shared.labtest.AbstractCountingTube;
 import couk.nucmedone.massivecyril.shared.labtest.CorrectedCounts;
 import couk.nucmedone.massivecyril.shared.labtest.Counts;
+import couk.nucmedone.massivecyril.shared.labtest.DoublePlus;
 import couk.nucmedone.massivecyril.shared.labtest.Injection;
 import couk.nucmedone.massivecyril.shared.labtest.SampleTube;
 import couk.nucmedone.massivecyril.shared.labtest.Standard;
+import couk.nucmedone.massivecyril.shared.labtest.StandardsTube;
 
 public class BNMS_2001_Audit {
 
@@ -38,14 +41,25 @@ public class BNMS_2001_Audit {
 	public static Standard[] getStandards() throws ParseException {
 		if (standards == null) {
 
-			standards = new Standard[AUDIT_NUMBER];
-			standards[0] = new Standard("");
-
+			// The count date
 			Calendar date = Calendar.getInstance();
 			date.setTime(countDate.parse("06-Feb-2001 18:46:46"));
 			date.set(Calendar.YEAR, 2000);
 
+			standards = new Standard[AUDIT_NUMBER];
+			standards[0] = new Standard("");
+
+			// Count date
 			standards[0].setCountDate(date);
+			// Just make reference date the same as the count date
+			standards[0].setRefDate(date);
+			// Count volume
+			standards[0].setCountVolume(new DoublePlus(5, AbstractCountingTube.VOLUME_ERROR));
+			// Counts
+			standards[0].setCounts(new CorrectedCounts(35281, 0, 1200));
+			// Weights
+			standards[0].setEmptyWeight(new DoublePlus(4, AbstractCountingTube.WEIGHT_ERROR));
+			standards[0].setFullWeight(new DoublePlus(4.5, AbstractCountingTube.WEIGHT_ERROR));
 		}
 
 		return standards;
@@ -77,9 +91,9 @@ public class BNMS_2001_Audit {
 			cal.set(Calendar.MINUTE, 41);
 			sample1.setCountDate(cal);
 			// Empty weight
-			sample1.setEmptyWeight(1d);
+			sample1.setEmptyWeight(new DoublePlus(1d, AbstractCountingTube.WEIGHT_ERROR));
 			// Full weight
-			sample1.setFullWeight(3d);
+			sample1.setFullWeight(new DoublePlus(3d, AbstractCountingTube.WEIGHT_ERROR));
 			// Set sample counts & background
 			sample1.setCounts(new CorrectedCounts(new Counts(4600, 3600),
 					new Counts(10, 3600)));

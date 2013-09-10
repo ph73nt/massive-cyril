@@ -2,6 +2,7 @@ package couk.nucmedone.massivecyril;
 
 import junit.framework.Assert;
 import junit.framework.TestCase;
+import couk.nucmedone.massivecyril.shared.labtest.AbstractCountingTube;
 import couk.nucmedone.massivecyril.shared.labtest.DoublePlus;
 import couk.nucmedone.massivecyril.shared.labtest.StandardsTube;
 
@@ -16,8 +17,8 @@ public class StandardsTubeTest extends TestCase {
 	}
 	
 	public void testSetTracerVolume(){
-		tube.setEmptyWeight(5.6);
-		tube.setFullWeight(6.1);
+		tube.setEmptyWeight(new DoublePlus(5.6, AbstractCountingTube.WEIGHT_ERROR));
+		tube.setFullWeight(new DoublePlus(6.1, AbstractCountingTube.WEIGHT_ERROR));
 		DoublePlus dil = new DoublePlus(0.5 / 500, 1);
 		double dens = 1;
 		tube.setTracerVolume(dil, dens);

@@ -19,10 +19,10 @@ public abstract class AbstractCountingTube {
 	protected Calendar countDateTime;	
 
 	// TODO: Enable proper method of setting weight error
-	public double weightError = 0.0005; //g
+	public static final double WEIGHT_ERROR = 0.0005; //g
 	
 	//TODO: Enable proper method for setting tube volume error
-	public double volumeError = 0.005; //ml
+	public static final double VOLUME_ERROR = 0.005; //ml
 
 	protected CorrectedCounts counts;
 
@@ -75,8 +75,8 @@ public abstract class AbstractCountingTube {
 	 * @param weight
 	 *            The sample (and tube) weight in grammes.
 	 */
-	public void setFullWeight(double weight) {
-		weightFull = new DoublePlus(weight, weightError);
+	public void setFullWeight(DoublePlus weight) {
+		weightFull = weight;
 	}
 
 	/**
@@ -96,8 +96,8 @@ public abstract class AbstractCountingTube {
 	 * @param weight
 	 *            The empty tube weight in grammes.
 	 */
-	public void setEmptyWeight(double weight) {
-		weightEmpty = new DoublePlus(weight, weightError);
+	public void setEmptyWeight(DoublePlus weight) {
+		weightEmpty = weight;
 	}
 
 	/**
@@ -119,8 +119,8 @@ public abstract class AbstractCountingTube {
 	 * @param volume
 	 *            The volume (in millilitres) used for counting.
 	 */
-	public void setCountingVolume(double volume) {
-		countingVolume = new DoublePlus(volume, volumeError);
+	public void setCountingVolume(DoublePlus volume) {
+		countingVolume = volume;
 	}
 
 	/**
@@ -155,7 +155,7 @@ public abstract class AbstractCountingTube {
 	 * get a calendar object representing the date and time of sample assay.
 	 * @return The date and time (as Calendar).
 	 */
-	public Calendar getTime() {
+	public Calendar getCountDate() {
 		return countDateTime;
 	}
 	
