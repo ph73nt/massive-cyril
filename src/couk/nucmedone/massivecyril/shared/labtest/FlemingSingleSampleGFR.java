@@ -35,7 +35,7 @@ public class FlemingSingleSampleGFR extends GFR {
 		double mins = samples[0].secondsFromAdmin() / 60;
 		
 		// Get the apparent volume
-		DoublePlus vol = injection.calculateVolumeInjected(true).div(samples[0].concentration);
+		DoublePlus vol = injection.calculateVolumeInjected(true).div(samples[0].getConcentration());
 		vol = vol.div(1000d);
 		
 		gfr = b.times(1282d);

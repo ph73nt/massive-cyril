@@ -34,8 +34,12 @@ public abstract class AbstractCountingTube {
 	protected DoublePlus weightFull;
 	protected DoublePlus weightEmpty;
 	protected DoublePlus countingVolume;
-	protected DoublePlus concentration;
+	private DoublePlus concentration;
 	
+	public void setConcentration(DoublePlus concentration) {
+		this.concentration = concentration;
+	}
+
 	protected Calendar countDateTime;	
 
 	// TODO: Enable proper method of setting weight error

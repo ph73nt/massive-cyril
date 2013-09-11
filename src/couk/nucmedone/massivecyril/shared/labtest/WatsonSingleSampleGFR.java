@@ -68,7 +68,7 @@ public class WatsonSingleSampleGFR extends GFR {
 		// var3 a bit more complex:
 		// log(ExCellVol/(vol/conc)) * ECV
 		DoublePlus c = injection.calculateVolumeInjected(true).div(
-				samples[0].concentration);
+				samples[0].getConcentration());
 		DoublePlus exCellVol = extraCellularVolume();
 		c = exCellVol.div(c);
 		c = DoublePlus.ln(c);
