@@ -18,17 +18,17 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
  *
  */
-package couk.nucmedone.massivecyril;
+package couk.nucmedone.massivecyril.shared.labtest;
 
 import java.text.ParseException;
 
 import couk.nucmedone.massivecyril.shared.labtest.WatsonSingleSampleGFR;
 import couk.nucmedone.massivecyril.shared.labtest.exceptions.TimeTooShortFromAdminException;
-import junit.framework.Assert;
+import org.junit.Assert;
 import junit.framework.TestCase;
 
 public class WatsonSingleSampleGFRTest extends TestCase {
-
+	
 	public void testWatsonSingleSampleGFR() {
 		try {
 			// Empty GFR object
@@ -41,6 +41,7 @@ public class WatsonSingleSampleGFRTest extends TestCase {
 			wsgfr.setPatient(BNMS_2001_Audit.getPatients()[0]);
 			// Add standard
 			wsgfr.addStandard(BNMS_2001_Audit.getStandards()[0]);
+			wsgfr.gfr();
 		} catch (TimeTooShortFromAdminException e) {
 			Assert.fail();
 		} catch (ParseException pe){

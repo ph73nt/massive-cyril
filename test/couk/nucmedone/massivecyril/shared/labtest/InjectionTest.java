@@ -18,7 +18,7 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
  *
  */
-package couk.nucmedone.massivecyril;
+package couk.nucmedone.massivecyril.shared.labtest;
 
 import junit.framework.Assert;
 import junit.framework.TestCase;

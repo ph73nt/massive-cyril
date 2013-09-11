@@ -18,31 +18,25 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
  *
  */
-package couk.nucmedone.massivecyril;
+package couk.nucmedone.massivecyril.shared.labtest;
 
-import junit.framework.Assert;
-import junit.framework.TestCase;
-import couk.nucmedone.massivecyril.shared.labtest.GFR;
+import junit.framework.Test;
+import junit.framework.TestSuite;
 
-public class GFRTest extends TestCase {
-    
-	// Average man
-	double height = 1.74;
-	double weight = 70;
-	double dubois = 1.840480395066;
-	double haycock = 1.842585900415;
-	
-	GFR gfr;
-	double tolerance;
-	
-	public GFRTest(String s) {
-        super(s);
-//		gfr = new GFR();
-		tolerance = 0.000000000001;
-    }
+public class AllTests {
 
-	public void testNothing() {
-		Assert.assertEquals(true, true);
+	public static Test suite() {
+		TestSuite suite = new TestSuite(AllTests.class.getName());
+		//$JUnit-BEGIN$
+		suite.addTestSuite(BSATest.class);
+		suite.addTestSuite(CorrectedCountsTest.class);
+		suite.addTestSuite(DoublePlusTest.class);
+		suite.addTestSuite(ErrorsTest.class);
+		suite.addTestSuite(GFRTest.class);
+		suite.addTestSuite(InjectionTest.class);
+		suite.addTestSuite(StandardsTubeTest.class);
+		//$JUnit-END$
+		return suite;
 	}
 
 }
