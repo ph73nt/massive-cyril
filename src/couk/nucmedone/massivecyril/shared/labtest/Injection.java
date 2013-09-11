@@ -38,18 +38,21 @@ public class Injection {
 	private DoublePlus countsBackground = new DoublePlus();
 	private DoublePlus volumeFull = new DoublePlus();
 	private DoublePlus volumeEmpty = new DoublePlus();
-	private DoublePlus volumeInjected = new DoublePlus(); 
+	private DoublePlus volumeInjected = new DoublePlus();
 	private DoublePlus activityNominal = new DoublePlus();
-	private DoublePlus injectedFraction = new DoublePlus();
-	
+	private DoublePlus injectedFraction;
+
 	private Calendar adminTime;
 
 	// TODO: Make syringe base error an accessible property
 	private double syringeBaseErr = 0.005;
-	
-	public Injection(){}
-	
-	public Injection(double countsFull, double countsResidual, double countsBkg, double emptyWeight, double fullWeight, Calendar adminTime){
+
+	public Injection() {
+	}
+
+	public Injection(double countsFull, double countsResidual,
+			double countsBkg, double emptyWeight, double fullWeight,
+			Calendar adminTime) {
 		setPreCounts(countsFull);
 		setPostCounts(countsResidual);
 		setBackgroundCounts(countsBkg);
@@ -57,7 +60,7 @@ public class Injection {
 		setFullWeight(fullWeight, syringeBaseErr);
 		setAdminTime(adminTime);
 	}
-	
+
 	/**
 	 * Set the pre-injection counts of an assayed syringe containing a full
 	 * patient dose.
@@ -79,7 +82,7 @@ public class Injection {
 	public DoublePlus getPreCounts() {
 		return countsFull;
 	}
-	
+
 	/**
 	 * Set the post-injection counts of an assayed syringe containing the
 	 * residual of a used dose;
@@ -101,7 +104,7 @@ public class Injection {
 	public DoublePlus getPostCounts() {
 		return countsResidual;
 	}
-	
+
 	/**
 	 * Set the background counts for a syringe assay.
 	 * 
@@ -110,7 +113,7 @@ public class Injection {
 	 */
 	public void setBackgroundCounts(double counts) {
 		countsBackground.setValue(counts);
-		countsBackground.setSD(Math.sqrt(counts));		
+		countsBackground.setSD(Math.sqrt(counts));
 	}
 
 	/**
@@ -158,29 +161,32 @@ public class Injection {
 	 */
 	public DoublePlus getInjectedFraction(boolean injFracAssess) {
 
-		if (injFracAssess) {
-			// Pre-counts must be greater than the background - otherwise there
-			// is a problem with the assay
-			DoublePlus denominator = countsFull.minus(countsBackground);
-			if (denominator.value() < 0) {
-				injectedFraction.setValue(Double.NaN);
-				injectedFraction.setSD(Double.NaN);
-			} else {
-				// Post-counts may be less than background by statistical
-				// fluctuation - in which case full injection has been achieved				
-				if (countsResidual.value() - countsBackground.value() < 0) {
-					injectedFraction.setValue(1);
-				} else {
-					// do full minus residual to save subtracting quotient from 1
-					DoublePlus numerator = countsFull.minus(countsResidual);
-					injectedFraction = numerator.div(denominator); 
+		if (injectedFraction == null) {
+			injectedFraction = new DoublePlus();
+			if (injFracAssess) {
+				// Pre-counts must be greater than the background - otherwise
+				// there
+				// is a problem with the assay
+				DoublePlus denominator = countsFull.minus(countsBackground);
+				if (denominator.value() >= 0) {					
+					// Post-counts may be less than background by statistical
+					// fluctuation - in which case full injection has been
+					// achieved
+					if (countsResidual.value() - countsBackground.value() < 0) {
+						injectedFraction.setValue(1);
+					} else {
+						// do full minus residual to save subtracting quotient
+						// from 1
+						DoublePlus numerator = countsFull.minus(countsResidual);
+						injectedFraction = numerator.div(denominator);
+					}
 				}
+			} else {
+				injectedFraction.setValue(1);
+				injectedFraction.setSD(0);
 			}
-		} else {
-			injectedFraction.setValue(1);
-			injectedFraction.setSD(0);
 		}
-		
+
 		return injectedFraction;
 
 	}
@@ -194,7 +200,8 @@ public class Injection {
 	 * @param emptyWeight
 	 *            Weight of syringe (in grammes) before adding tracer.
 	 */
-	public DoublePlus calculateVolumeInjected(DoublePlus fullWeight, DoublePlus emptyWeight, boolean injFracAssess) {
+	public DoublePlus calculateVolumeInjected(DoublePlus fullWeight,
+			DoublePlus emptyWeight, boolean injFracAssess) {
 		weightFull = fullWeight;
 		weightEmpty = emptyWeight;
 		return calculateVolumeInjected(injFracAssess);
@@ -202,14 +209,12 @@ public class Injection {
 
 	/**
 	 * Calculate volume injected from the injected fraction, full weight and
-	 * empty weight. Results is in millilitres, assuming 1g/ml 
+	 * empty weight. Results is in millilitres, assuming 1g/ml
 	 * 
 	 */
 	public DoublePlus calculateVolumeInjected(boolean injFracAssess) {
 		volumeInjected = weightFull.minus(weightEmpty);
-		if (injFracAssess) {
-			volumeInjected = volumeInjected.times(injectedFraction);
-		}
+		volumeInjected = volumeInjected.times(getInjectedFraction(injFracAssess));
 		return volumeInjected;
 	}
 
@@ -231,10 +236,10 @@ public class Injection {
 	 * 
 	 * @return The syringe weight in grammes.
 	 */
-	public DoublePlus getFullWeight(){
+	public DoublePlus getFullWeight() {
 		return weightFull;
 	}
-	
+
 	/**
 	 * Set the weight of empty syringe and needle before drawing-up tracer
 	 * volume.
@@ -246,7 +251,7 @@ public class Injection {
 		weightEmpty.setValue(weight);
 		weightEmpty.setSD(weightError);
 	}
-	
+
 	/**
 	 * Get the weight of empty syringe and needle before drawing-up tracer
 	 * volume.
@@ -256,17 +261,21 @@ public class Injection {
 	public DoublePlus getEmptyWeight() {
 		return weightEmpty;
 	}
-	
+
 	/**
 	 * Set the date and time of the tracer administration.
-	 * @param dateTime the date and time of administration.
+	 * 
+	 * @param dateTime
+	 *            the date and time of administration.
 	 */
 	public void setAdminTime(Calendar dateTime) {
 		this.adminTime = dateTime;
 	}
-	
+
 	/**
-	 * get a calendar object representing the date and time of tracer administration.
+	 * get a calendar object representing the date and time of tracer
+	 * administration.
+	 * 
 	 * @return The date and time (as Calendar).
 	 */
 	public Calendar getTime() {

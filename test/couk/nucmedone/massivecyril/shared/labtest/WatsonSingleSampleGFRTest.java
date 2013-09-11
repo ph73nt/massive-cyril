@@ -23,8 +23,11 @@ package couk.nucmedone.massivecyril.shared.labtest;
 import java.text.ParseException;
 
 import couk.nucmedone.massivecyril.shared.labtest.WatsonSingleSampleGFR;
+import couk.nucmedone.massivecyril.shared.labtest.exceptions.StandardSensitivityException;
 import couk.nucmedone.massivecyril.shared.labtest.exceptions.TimeTooShortFromAdminException;
+
 import org.junit.Assert;
+
 import junit.framework.TestCase;
 
 public class WatsonSingleSampleGFRTest extends TestCase {
@@ -46,6 +49,8 @@ public class WatsonSingleSampleGFRTest extends TestCase {
 			Assert.fail();
 		} catch (ParseException pe){
 			Assert.fail("Failure parsing counting date");
+		} catch (StandardSensitivityException e) {
+			Assert.fail("Unexpecting count sensitivity");
 		}
 	}
 

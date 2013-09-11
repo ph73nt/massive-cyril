@@ -33,6 +33,7 @@ import couk.nucmedone.massivecyril.shared.labtest.DoublePlus;
 import couk.nucmedone.massivecyril.shared.labtest.Injection;
 import couk.nucmedone.massivecyril.shared.labtest.SampleTube;
 import couk.nucmedone.massivecyril.shared.labtest.Standard;
+import couk.nucmedone.massivecyril.shared.labtest.exceptions.StandardSensitivityException;
 
 public class BNMS_2001_Audit {
 
@@ -71,6 +72,8 @@ public class BNMS_2001_Audit {
 			standards[0].setCountDate(date);
 			// Just make reference date the same as the count date
 			standards[0].setRefDate(date);
+			// Tracer volume
+			standards[0].setTracerVolume(new DoublePlus(0.5, AbstractCountingTube.VOLUME_ERROR));
 			// Count volume
 			standards[0].setCountVolume(new DoublePlus(5, AbstractCountingTube.VOLUME_ERROR));
 			// Counts
@@ -83,19 +86,26 @@ public class BNMS_2001_Audit {
 		return standards;
 	}
 
-	public static SampleTube[] getSamples() {
+	public static SampleTube[] getSamples() throws ParseException, StandardSensitivityException {
 
 		if (samples == null) {
 			SampleTube sample1 = new SampleTube("One");
 
 			// Sample time
-			Calendar cal = Calendar.getInstance();
-			cal.set(2001, Calendar.FEBRUARY, 01, 11, 0);
-			sample1.setSampleTime(cal);
+			Calendar sampleTime = Calendar.getInstance();
+			sampleTime.set(2001, Calendar.FEBRUARY, 1, 11, 0);
+			sample1.setSampleTime(sampleTime);
+			// Admin time
+			Calendar adminTime = Calendar.getInstance();
+			adminTime.setTime(sampleTime.getTime());
+			adminTime.set(Calendar.HOUR_OF_DAY, 9);
+			sample1.setAdminTime(adminTime);
 			// Count time
-			cal.set(Calendar.HOUR_OF_DAY, 10);
-			cal.set(Calendar.MINUTE, 41);
-			sample1.setCountDate(cal);
+			Calendar countTime = Calendar.getInstance();
+			countTime.setTime(sampleTime.getTime());
+			countTime.set(Calendar.HOUR_OF_DAY, 10);
+			countTime.set(Calendar.MINUTE, 41);
+			sample1.setCountDate(countTime);
 			// Empty weight
 			sample1.setEmptyWeight(new DoublePlus(1d, AbstractCountingTube.WEIGHT_ERROR));
 			// Full weight
@@ -103,6 +113,9 @@ public class BNMS_2001_Audit {
 			// Set sample counts & background
 			sample1.setCounts(new CorrectedCounts(new Counts(4600, 3600),
 					new Counts(10, 3600)));
+			// Set counter sensitivity
+			Standard[] standards = getStandards();
+			sample1.setMeanSensitivity(standards[0].sensitivity());
 
 			samples = new SampleTube[] { sample1 };
 		}

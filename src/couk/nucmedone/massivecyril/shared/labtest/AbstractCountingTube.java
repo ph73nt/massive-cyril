@@ -26,7 +26,7 @@ import java.util.Calendar;
  * A class to hold parameters for counting tubes used in counting tests such as
  * EDTA GFR and RCM.
  * 
- * @author neil@pukka-j.com.
+ * @author Neil J Thomson
  * 
  */
 public abstract class AbstractCountingTube {
@@ -54,6 +54,7 @@ public abstract class AbstractCountingTube {
 	protected double minimumVolume = 0.5; // ml
 	
 	protected String name = "";
+	private DoublePlus meanSensitivity;
 
 	public AbstractCountingTube(String name) {
 		this.name = name;
@@ -201,11 +202,12 @@ public abstract class AbstractCountingTube {
 	}
 	
 	// TODO: remove all these returning calculations and make place them private, called from a constructor
-	public void steConcentration(DoublePlus meanSensitivity) {
-		concentration = this.cpsPerMl().div(meanSensitivity);
+	public void setMeanSensitivity(DoublePlus meanSensitivity) {
+		this.meanSensitivity = meanSensitivity;
 	}
 	
 	public DoublePlus getConcentration() {
+		concentration = this.cpsPerMl().div(meanSensitivity);
 		return concentration;
 	}
 

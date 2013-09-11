@@ -87,7 +87,7 @@ public class WatsonSingleSampleGFR extends GFR {
 	}
 	
 	protected DoublePlus extraCellularVolume(){
-		return new DoublePlus(8116.6 * BSA.bodySurfaceArea(weight, height) - 28.2, Double.MIN_NORMAL);
+		return new DoublePlus(8116.6 * BSA.bodySurfaceArea(getPatient().getWeight(), getPatient().getHeight()) - 28.2, Double.MIN_NORMAL);
 	}
 
 }

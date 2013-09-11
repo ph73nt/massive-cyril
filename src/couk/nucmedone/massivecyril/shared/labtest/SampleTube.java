@@ -26,7 +26,8 @@ import couk.nucmedone.massivecyril.shared.labtest.exceptions.TimeTooShortFromAdm
 
 public class SampleTube extends AbstractCountingTube {
 
-	private double density = Double.NaN;
+	// TODO: Set some sort of proper density
+	private double density = 1d;
 	private Calendar adminTime;
 	private Calendar sampleTime;
 	public double minimumSampleInterval = 60 * 60; // 1h in seconds!
@@ -39,7 +40,7 @@ public class SampleTube extends AbstractCountingTube {
 	public double secondsFromAdmin() throws TimeTooShortFromAdminException {
 		double secondsSinceAdmin = countDateTime.getTimeInMillis();
 		secondsSinceAdmin -= adminTime.getTimeInMillis();
-		secondsSinceAdmin *= 1000;
+		secondsSinceAdmin /= 1000;
 
 		// Warn if the interval is less than some threshold... which will also
 		// be thrown for silly errors like a negative time.

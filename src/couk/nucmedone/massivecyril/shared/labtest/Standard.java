@@ -149,4 +149,9 @@ public class Standard {
 		tube.setFullWeight(weight);
 	}
 
+	public void setTracerVolume(DoublePlus volume) {
+		tube.setTracerVolume(volume);
+		
+	}
+
 }

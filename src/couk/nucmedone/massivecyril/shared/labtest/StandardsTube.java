@@ -70,7 +70,7 @@ public class StandardsTube extends AbstractCountingTube {
 	 */
 	public DoublePlus sensitivity() {
 		sensitivity = getCPS().div(tracerVolume);
-		return new DoublePlus();
+		return sensitivity;
 	}
 
 }
