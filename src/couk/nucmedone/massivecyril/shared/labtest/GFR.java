@@ -39,8 +39,12 @@ public abstract class GFR {
 	protected String[] warnings = null;
 	
 	protected SampleTube[] samples;
-
+	
 	public GFR() throws TimeTooShortFromAdminException {
+		
+	}
+
+	public GFR(String obsolete) throws TimeTooShortFromAdminException {
 
 		// TODO: populate injFracAssess with boolean property.
 		boolean injFracAssess = true;

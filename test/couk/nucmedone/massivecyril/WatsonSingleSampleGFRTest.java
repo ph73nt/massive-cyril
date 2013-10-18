@@ -2,6 +2,7 @@ package couk.nucmedone.massivecyril;
 
 import java.text.ParseException;
 
+import couk.nucmedone.massivecyril.shared.labtest.DoublePlus;
 import couk.nucmedone.massivecyril.shared.labtest.WatsonSingleSampleGFR;
 import couk.nucmedone.massivecyril.shared.labtest.exceptions.TimeTooShortFromAdminException;
 import junit.framework.Assert;
@@ -21,6 +22,9 @@ public class WatsonSingleSampleGFRTest extends TestCase {
 			wsgfr.setPatient(BNMS_2001_Audit.getPatients()[0]);
 			// Add standard
 			wsgfr.addStandard(BNMS_2001_Audit.getStandards()[0]);
+			// Calculate!
+			DoublePlus gfr = wsgfr.gfr();
+			System.out.println(gfr.value() + " +/- " + gfr.SD());
 		} catch (TimeTooShortFromAdminException e) {
 			Assert.fail();
 		} catch (ParseException pe){

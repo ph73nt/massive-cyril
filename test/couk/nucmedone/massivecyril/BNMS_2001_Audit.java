@@ -58,8 +58,8 @@ public class BNMS_2001_Audit {
 			// Counts
 			standards[0].setCounts(new CorrectedCounts(35281, 0, 1200));
 			// Weights
-			standards[0].setEmptyWeight(new DoublePlus(4, AbstractCountingTube.WEIGHT_ERROR));
-			standards[0].setFullWeight(new DoublePlus(4.5, AbstractCountingTube.WEIGHT_ERROR));
+			standards[0].setEmptyWeight(new DoublePlus(4.456, AbstractCountingTube.WEIGHT_ERROR));
+			standards[0].setFullWeight(new DoublePlus(4.962, AbstractCountingTube.WEIGHT_ERROR));
 		}
 
 		return standards;
@@ -83,13 +83,19 @@ public class BNMS_2001_Audit {
 			SampleTube sample1 = new SampleTube("One");
 
 			// Sample time
-			Calendar cal = Calendar.getInstance();
-			cal.set(2001, Calendar.FEBRUARY, 01, 11, 0);
-			sample1.setSampleTime(cal);
+			sample1.setSampleTime(sampleTime());
 			// Count time
-			cal.set(Calendar.HOUR_OF_DAY, 10);
-			cal.set(Calendar.MINUTE, 41);
-			sample1.setCountDate(cal);
+			Calendar countTime = sampleTime();
+			countTime.set(Calendar.HOUR_OF_DAY, 10);
+			countTime.set(Calendar.MINUTE, 41);
+			System.out.println("Count time: " + countTime.getTimeInMillis());
+			sample1.setCountDate(countTime);
+			// Admin time
+			Calendar adminTime = sampleTime();
+			adminTime.set(Calendar.HOUR_OF_DAY, 9);
+			adminTime.set(Calendar.MINUTE, 0);
+			System.out.println("Admin time:" + adminTime.getTimeInMillis());
+			sample1.setAdminTime(adminTime);
 			// Empty weight
 			sample1.setEmptyWeight(new DoublePlus(1d, AbstractCountingTube.WEIGHT_ERROR));
 			// Full weight
@@ -102,6 +108,12 @@ public class BNMS_2001_Audit {
 		}
 
 		return samples;
+	}
+
+	private static Calendar sampleTime() {
+		Calendar sampleTime = Calendar.getInstance();
+		sampleTime.set(2001, Calendar.FEBRUARY, 01, 11, 0);
+		return sampleTime;
 	}
 
 	public static Patient[] getPatients() {

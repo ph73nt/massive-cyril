@@ -17,10 +17,12 @@ public class SampleTube extends AbstractCountingTube {
 	
 	// TODO: should this be seconds from admin to sample - or both?
 	public double secondsFromAdmin() throws TimeTooShortFromAdminException {
-		double secondsSinceAdmin = countDateTime.getTimeInMillis();
+		long secondsSinceAdmin = countDateTime.getTimeInMillis();
+		System.out.println(countDateTime.getTimeInMillis());
 		secondsSinceAdmin -= adminTime.getTimeInMillis();
-		secondsSinceAdmin *= 1000;
-
+		System.out.println(adminTime.getTimeInMillis());
+		secondsSinceAdmin /= 1000;
+		System.out.println(sampleTime.getTimeInMillis());
 		// Warn if the interval is less than some threshold... which will also
 		// be thrown for silly errors like a negative time.
 		if (secondsSinceAdmin < minimumSampleInterval) {
