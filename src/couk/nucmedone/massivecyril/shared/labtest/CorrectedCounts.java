@@ -1,5 +1,8 @@
 package couk.nucmedone.massivecyril.shared.labtest;
 
+import couk.nucmedone.common.base.Counts;
+import couk.nucmedone.common.base.DoublePlus;
+
 
 /**
  * Class to hold count assay parameters such as interval, background, counts,

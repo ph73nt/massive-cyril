@@ -1,10 +1,11 @@
 package couk.nucmedone.massivecyril.shared.labtest;
 
+import couk.nucmedone.common.base.DoublePlus;
+
 
 public class StandardsTube extends AbstractCountingTube {
 	
 	private DoublePlus tracerVolume;
-	private DoublePlus sensitivity;
 	
 	public StandardsTube(String name) {
 		super(name);
@@ -49,8 +50,7 @@ public class StandardsTube extends AbstractCountingTube {
 	 * @return The counter sensitivity to this standard.
 	 */
 	public DoublePlus sensitivity() {
-		sensitivity = getCPS().div(tracerVolume);
-		return new DoublePlus();
+		return getCPS().div(tracerVolume);
 	}
 
 }

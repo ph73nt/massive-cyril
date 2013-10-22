@@ -2,6 +2,10 @@ package couk.nucmedone.massivecyril.shared.labtest;
 
 import java.util.Calendar;
 
+import couk.nucmedone.common.base.DoublePlus;
+import couk.nucmedone.common.nuclides.Decay;
+import couk.nucmedone.common.nuclides.Isotopes;
+import couk.nucmedone.common.nuclides.Nuclides;
 import couk.nucmedone.massivecyril.shared.labtest.exceptions.StandardSensitivityException;
 
 /**
@@ -16,6 +20,9 @@ public class Standard {
 	public Flask flask;
 	public StandardsTube tube;
 	public String name = "";
+	
+	private DoublePlus flaskVolume;
+	private DoublePlus tracerVolume;
 
 	// TODO: Enable proper setting of stock solution (eg EDTA) density
 	public double stockDensity = 1; /* g/ml */
@@ -31,25 +38,15 @@ public class Standard {
 	// TODO: Proper method to set nuclide
 	private Nuclides nuc = Isotopes.cr51;
 
-	public Standard(String name) {
+	public Standard(String name, DoublePlus flaskVolume, DoublePlus tracerVolume) {
 		this.name = name;
-		flask = new Flask();
+		flask = new Flask(flaskVolume, tracerVolume);
 		tube = new StandardsTube("T" + name);
-	}
-
-	public void init() {
-
-		// Set the EDTA volume in the counting tube
-		// ... first get dilution of stock in flask...
-		DoublePlus dil = flask.getTracerVolume().div(flask.getFlaskVolume());
-		// ... now scale to counting tube
-		tube.setTracerVolume(dil, stockDensity);
-
-		// Compare expected volume...
 	}
 	
 	public void setEmptyWeight(DoublePlus weight){
 		tube.setEmptyWeight(weight);
+		setTracerVolume();
 	}
 
 	public DoublePlus sensitivity() {
@@ -127,6 +124,24 @@ public class Standard {
 
 	public void setFullWeight(DoublePlus weight) {
 		tube.setFullWeight(weight);
+		setTracerVolume();
+	}
+
+	public DoublePlus getTracerVolume() {
+		return tracerVolume;
+	}
+
+	private void setTracerVolume() {
+		if(tube.getFullWeight() != null && tube.getEmptyWeight() != null){
+			// Set the EDTA volume in the counting tube
+			// ... first get dilution of stock in flask...
+			DoublePlus dil = flask.getTracerVolume().div(flask.getFlaskVolume());
+			// ... now scale to counting tube
+			tube.setTracerVolume(dil, stockDensity);
+
+			// TODO: compare expected volume...
+			
+		}
 	}
 
 }

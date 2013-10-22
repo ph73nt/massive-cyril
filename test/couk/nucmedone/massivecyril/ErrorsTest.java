@@ -2,7 +2,7 @@ package couk.nucmedone.massivecyril;
 
 import junit.framework.Assert;
 import junit.framework.TestCase;
-import couk.nucmedone.massivecyril.shared.labtest.Errors;
+import couk.nucmedone.common.base.Errors;
 
 public class ErrorsTest extends TestCase {
 		

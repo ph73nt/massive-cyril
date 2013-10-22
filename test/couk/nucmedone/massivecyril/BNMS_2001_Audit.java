@@ -5,12 +5,13 @@ import java.util.Calendar;
 
 import com.ibm.icu.text.SimpleDateFormat;
 
+import couk.nucmedone.common.base.Counts;
+import couk.nucmedone.common.base.DoublePlus;
 import couk.nucmedone.common.patient.Patient;
 import couk.nucmedone.common.patient.PatientName;
 import couk.nucmedone.massivecyril.shared.labtest.AbstractCountingTube;
 import couk.nucmedone.massivecyril.shared.labtest.CorrectedCounts;
-import couk.nucmedone.massivecyril.shared.labtest.Counts;
-import couk.nucmedone.massivecyril.shared.labtest.DoublePlus;
+import couk.nucmedone.massivecyril.shared.labtest.Flask;
 import couk.nucmedone.massivecyril.shared.labtest.Injection;
 import couk.nucmedone.massivecyril.shared.labtest.SampleTube;
 import couk.nucmedone.massivecyril.shared.labtest.Standard;
@@ -47,7 +48,9 @@ public class BNMS_2001_Audit {
 			date.set(Calendar.YEAR, 2000);
 
 			standards = new Standard[AUDIT_NUMBER];
-			standards[0] = new Standard("");
+			// TODO: proper way of setting the tracer volume in the standard
+			standards[0] = new Standard("", new DoublePlus(1000, Flask.FLASK_ERROR), 
+					new DoublePlus(0.5, Flask.TRACER_ERROR));
 
 			// Count date
 			standards[0].setCountDate(date);

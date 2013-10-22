@@ -2,8 +2,8 @@ package couk.nucmedone.massivecyril;
 
 import junit.framework.Assert;
 import junit.framework.TestCase;
+import couk.nucmedone.common.base.DoublePlus;
 import couk.nucmedone.massivecyril.shared.labtest.AbstractCountingTube;
-import couk.nucmedone.massivecyril.shared.labtest.DoublePlus;
 import couk.nucmedone.massivecyril.shared.labtest.StandardsTube;
 
 public class StandardsTubeTest extends TestCase {

@@ -1,5 +1,7 @@
 package couk.nucmedone.massivecyril.shared.labtest;
 
+import couk.nucmedone.common.base.DoublePlus;
+
 /**
  * A class to hold parameter for counting reference standard flasks
  * in nuclear counting tests such as EDTA GFR and RCM.
@@ -12,12 +14,17 @@ public class Flask {
 	private DoublePlus flaskVolume, tracerVolume;
 	
 	// TODO: Set the flask volume error
-	private double flaskError = 0.5; //ml
+	public static final double FLASK_ERROR = 0.5; //ml
 	
 	// TODO: Set tracer volume error
-	private double tracerError = 0.05; //ml
+	public static final double TRACER_ERROR = 0.05; //ml
 	
-	public Flask(){}
+	public Flask(DoublePlus flaskVolume, DoublePlus tracerVolume){
+		
+		this.flaskVolume = flaskVolume;
+		this.tracerVolume = tracerVolume;
+		
+	}
 	
 	/**
 	 * Set the volume (in millilitres) of total fluid in the flask the standard
@@ -26,7 +33,7 @@ public class Flask {
 	 * @param vol The container volume in millilitres.
 	 */
 	public void setFlaskVolume(double vol) {
-		flaskVolume = new DoublePlus(vol, flaskError);
+		flaskVolume = new DoublePlus(vol, FLASK_ERROR);
 	}
 	
 	/**
@@ -47,7 +54,7 @@ public class Flask {
 	 *            The volume of active tracer in millilitres.
 	 */
 	public void setTracerVolume(double vol) {
-		tracerVolume = new DoublePlus(vol, tracerError);
+		tracerVolume = new DoublePlus(vol, TRACER_ERROR);
 	}
 
 	/**

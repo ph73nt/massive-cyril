@@ -2,6 +2,8 @@ package couk.nucmedone.massivecyril.shared.labtest;
 
 import java.util.Calendar;
 
+import couk.nucmedone.common.base.DoublePlus;
+
 /**
  * A class to hold parameters for counting tubes used in counting tests such as
  * EDTA GFR and RCM.
@@ -14,7 +16,8 @@ public abstract class AbstractCountingTube {
 	protected DoublePlus weightFull;
 	protected DoublePlus weightEmpty;
 	protected DoublePlus countingVolume;
-	protected DoublePlus concentration;
+	protected DoublePlus countRate;
+	protected DoublePlus counterSensitivity;
 	
 	protected Calendar countDateTime;	
 
@@ -176,13 +179,13 @@ public abstract class AbstractCountingTube {
 		return this.getCPS().div(getTubeContents());
 	}
 	
-	// TODO: remove all these returning calculations and make place them private, called from a constructor
-	public void steConcentration(DoublePlus meanSensitivity) {
-		concentration = this.cpsPerMl().div(meanSensitivity);
-	}
-	
 	public DoublePlus getConcentration() {
-		return concentration;
+		return cpsPerMl().div(counterSensitivity);
+	}	
+	
+	public void setCounterSensitivity(DoublePlus counterSensitivity) {
+		this.counterSensitivity = counterSensitivity;
+		
 	}
 
 }

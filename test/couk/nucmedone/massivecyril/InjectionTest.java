@@ -2,7 +2,7 @@ package couk.nucmedone.massivecyril;
 
 import junit.framework.Assert;
 import junit.framework.TestCase;
-import couk.nucmedone.massivecyril.shared.labtest.DoublePlus;
+import couk.nucmedone.common.base.DoublePlus;
 import couk.nucmedone.massivecyril.shared.labtest.Injection;
 
 public class InjectionTest extends TestCase {
@@ -72,7 +72,7 @@ public class InjectionTest extends TestCase {
 		DoublePlus temp = inj.getInjectedFraction(51000, 26000, 1000, true);
 		inj.setFullWeight(200, 1);
 		inj.setEmptyWeight(20, 1);
-		DoublePlus vol = inj.calculateVolumeInjected(true);
+		DoublePlus vol = inj.volumeInjected(true);
 		Assert.assertEquals(90, vol.value(), tolerance);		
 	}
 	

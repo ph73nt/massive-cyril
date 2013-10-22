@@ -2,6 +2,8 @@ package couk.nucmedone.massivecyril.shared.labtest;
 
 import java.util.Calendar;
 
+import couk.nucmedone.common.base.DoublePlus;
+
 /**
  * A class to hold parameters for nuclear counting test administrations such as
  * a syringe of Cr-51 EDTA.
@@ -36,6 +38,7 @@ public class Injection {
 		setEmptyWeight(emptyWeight, syringeBaseErr);
 		setFullWeight(fullWeight, syringeBaseErr);
 		setAdminTime(adminTime);
+		injectedFraction = getInjectedFraction(countsFull, countsResidual, countsBkg, true);
 	}
 	
 	/**
@@ -177,7 +180,7 @@ public class Injection {
 	public DoublePlus calculateVolumeInjected(DoublePlus fullWeight, DoublePlus emptyWeight, boolean injFracAssess) {
 		weightFull = fullWeight;
 		weightEmpty = emptyWeight;
-		return calculateVolumeInjected(injFracAssess);
+		return volumeInjected(injFracAssess);
 	}
 
 	/**
@@ -185,7 +188,7 @@ public class Injection {
 	 * empty weight. Results is in millilitres, assuming 1g/ml 
 	 * 
 	 */
-	public DoublePlus calculateVolumeInjected(boolean injFracAssess) {
+	public DoublePlus volumeInjected(boolean injFracAssess) {
 		volumeInjected = weightFull.minus(weightEmpty);
 		if (injFracAssess) {
 			volumeInjected = volumeInjected.times(injectedFraction);

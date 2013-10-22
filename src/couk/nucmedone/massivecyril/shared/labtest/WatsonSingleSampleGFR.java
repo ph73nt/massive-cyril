@@ -1,5 +1,6 @@
 package couk.nucmedone.massivecyril.shared.labtest;
 
+import couk.nucmedone.common.base.DoublePlus;
 import couk.nucmedone.massivecyril.shared.labtest.exceptions.TimeTooShortFromAdminException;
 
 /**
@@ -37,8 +38,14 @@ public class WatsonSingleSampleGFR extends GFR {
 	}
 
 	public DoublePlus gfr() throws TimeTooShortFromAdminException {
+		
+		// Minutes since administration
 		double mins = samples[0].secondsFromAdmin() / 60;
 
+		//  Calibrate the sample
+		samples[0].setCounterSensitivity(counterSensitivity);
+		samples[0].setDensity(1);
+		
 		// Solve the famous quadratic equation!
 		// -b/(2a) + (b^2 - 4ac).... then check if sqrt is OK
 		DoublePlus a = new DoublePlus(mins * (0.0000017 * mins - 0.0012),
@@ -47,8 +54,8 @@ public class WatsonSingleSampleGFR extends GFR {
 				Double.MIN_VALUE);
 		// var3 a bit more complex:
 		// log(ExCellVol/(vol/conc)) * ECV
-		DoublePlus c = injection.calculateVolumeInjected(true).div(
-				samples[0].concentration);
+		DoublePlus c = injection.volumeInjected(true).div(
+				samples[0].getConcentration());
 		DoublePlus exCellVol = extraCellularVolume();
 		c = exCellVol.div(c);
 		c = DoublePlus.ln(c);
@@ -67,7 +74,9 @@ public class WatsonSingleSampleGFR extends GFR {
 	}
 	
 	protected DoublePlus extraCellularVolume(){
-		return new DoublePlus(8116.6 * BSA.bodySurfaceArea(weight, height) - 28.2, Double.MIN_NORMAL);
+		double w = patient.getWeight();
+		double h = patient.getHeight();
+		return new DoublePlus(8116.6 * BSA.bodySurfaceArea(w, h) - 28.2, Double.MIN_NORMAL);
 	}
 
 }

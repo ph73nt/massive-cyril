@@ -2,7 +2,7 @@ package couk.nucmedone.massivecyril;
 
 import java.text.ParseException;
 
-import couk.nucmedone.massivecyril.shared.labtest.DoublePlus;
+import couk.nucmedone.common.base.DoublePlus;
 import couk.nucmedone.massivecyril.shared.labtest.WatsonSingleSampleGFR;
 import couk.nucmedone.massivecyril.shared.labtest.exceptions.TimeTooShortFromAdminException;
 import junit.framework.Assert;

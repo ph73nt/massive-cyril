@@ -1,5 +1,6 @@
 package couk.nucmedone.massivecyril.shared.labtest;
 
+import couk.nucmedone.common.base.DoublePlus;
 import couk.nucmedone.massivecyril.shared.labtest.exceptions.TimeTooShortFromAdminException;
 
 public class FlemingSingleSampleGFR extends GFR {
@@ -9,13 +10,15 @@ public class FlemingSingleSampleGFR extends GFR {
 		// J Fleming, et al, Nucl. Med. Commun., 2005(26):743
 		
 		// Get body surface area
-		DoublePlus b = new DoublePlus(BSA.bodySurfaceArea(weight, height), Double.MIN_VALUE);
+		double w = patient.getWeight();
+		double h = patient.getHeight();
+		DoublePlus b = new DoublePlus(BSA.bodySurfaceArea(w, h), Double.MIN_VALUE);
 		
 		// calculate time from injection
 		double mins = samples[0].secondsFromAdmin() / 60;
 		
 		// Get the apparent volume
-		DoublePlus vol = injection.calculateVolumeInjected(true).div(samples[0].concentration);
+		DoublePlus vol = injection.volumeInjected(true).div(samples[0].getConcentration());
 		vol = vol.div(1000d);
 		
 		gfr = b.times(1282d);

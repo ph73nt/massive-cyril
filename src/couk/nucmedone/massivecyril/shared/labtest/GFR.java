@@ -1,7 +1,9 @@
 package couk.nucmedone.massivecyril.shared.labtest;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
+import couk.nucmedone.common.base.DoublePlus;
 import couk.nucmedone.common.patient.Patient;
 import couk.nucmedone.massivecyril.shared.labtest.exceptions.TimeTooShortFromAdminException;
 
@@ -21,27 +23,26 @@ public abstract class GFR {
 	public static final int OKAY = 0;
 	public static final int WARNING = 1;
 	public static final int ERROR = 2;
-	
+
 	// TODO: Set properly through GUI
-	public double allowableStdDiff = 2; //%
-	
+	public double allowableStdDiff = 2; // %
+
 	protected DoublePlus halftime;
 	protected DoublePlus volOfDist;
 	protected DoublePlus clearanceTime;
 	protected AbstractCurveFit curve;
-	protected DoublePlus gfr; 
-	protected double height;
-	protected double weight;
+	protected DoublePlus gfr;
 	protected Injection injection;
-	private Patient patient;
+	protected Patient patient;
 	private ArrayList<Standard> list = new ArrayList<Standard>();
-	
+	protected DoublePlus counterSensitivity;
+
 	protected String[] warnings = null;
-	
+
 	protected SampleTube[] samples;
-	
+
 	public GFR() throws TimeTooShortFromAdminException {
-		
+
 	}
 
 	public GFR(String obsolete) throws TimeTooShortFromAdminException {
@@ -57,7 +58,8 @@ public abstract class GFR {
 
 		for (int i = 0; i < noStds; i++) {
 			// Initialise all standards.
-			stds[i] = new Standard("S" + i);
+			stds[i] = new Standard("S" + i, new DoublePlus(1000, Flask.FLASK_ERROR), 
+					new DoublePlus(0.5, Flask.TRACER_ERROR));
 
 			// TODO: set volumes and stuff!
 
@@ -77,8 +79,10 @@ public abstract class GFR {
 			// get sum of sensitivities (for mean)
 			meanSensitivity.plus(stds[i].sensitivity());
 			// get max and min for error caculations
-			minSensitivity = stds[i].sensitivity().value() < minSensitivity.value() ? stds[i].sensitivity() : minSensitivity;
-			maxSensitivity = stds[i].sensitivity().value() > maxSensitivity.value() ? stds[i].sensitivity() : maxSensitivity;
+			minSensitivity = stds[i].sensitivity().value() < minSensitivity
+					.value() ? stds[i].sensitivity() : minSensitivity;
+			maxSensitivity = stds[i].sensitivity().value() > maxSensitivity
+					.value() ? stds[i].sensitivity() : maxSensitivity;
 		}
 
 		// Calculate mean
@@ -88,27 +92,49 @@ public abstract class GFR {
 		relDiff = relDiff.div(meanSensitivity);
 		relDiff = relDiff.times(100d); // Percent!
 		relDiff.setValue(Math.abs(relDiff.value())); // Must be positive
-		
+
 		if (relDiff.value() > allowableStdDiff) {
-			//throw some exception and possible allow user to choose a sample to drop
+			// throw some exception and possible allow user to choose a sample
+			// to drop
 		}
-		
+
 		// Do curve fit
-//		int len = samples.length;
+		// int len = samples.length;
 
 		// Check if there's three or more samples.
 		// Two is bad practice as the "curve fit" is a straight line fit and no
 		// error checking is possible.
 		// One sample is awful and no curve fit can be done at all.
-//		if (len < 3) {
-//			String message = "At least three samples are required to produce an accurate exponential curve fit.";
-//			throw new LowSampleNumberException(message);
-//		}
-		
+		// if (len < 3) {
+		// String message =
+		// "At least three samples are required to produce an accurate exponential curve fit.";
+		// throw new LowSampleNumberException(message);
+		// }
+
 	}
-	
-	public void addStandard(Standard standard){
+
+	/**
+	 * Add a(nother) Standard to the calculation. The mean counter sensitivity
+	 * is recalculated after each addition.
+	 * 
+	 * @param standard
+	 *            The standard to add.
+	 */
+	public void addStandard(Standard standard) {
+
 		list.add(standard);
+
+		// Recalculate the mean sensitivity
+		Iterator<Standard> it = list.iterator();
+		DoublePlus sensitivity = it.next().sensitivity();
+		while (it.hasNext()) {
+			sensitivity.plus(it.next().sensitivity());
+		}
+		if (list.size() > 1) {
+			sensitivity.div(list.size());
+		}
+
+		counterSensitivity = sensitivity;
 	}
 
 	/**
@@ -120,8 +146,8 @@ public abstract class GFR {
 		// TODO Auto-generated method stub
 
 	}
-	
-	protected DoublePlus extraCellularVolume(){
+
+	protected DoublePlus extraCellularVolume() {
 		return new DoublePlus();
 	}
 
@@ -140,43 +166,35 @@ public abstract class GFR {
 			warnings[0] = warning;
 		}
 	}
-	
+
 	abstract public void setHalftime();
-	
+
 	public DoublePlus getHalftime() {
 		return halftime;
 	}
-	
+
 	abstract public void setClearance();
-	
+
 	public DoublePlus getClearance() {
 		return clearanceTime;
 	}
-	
+
 	abstract public void setVolOfDist();
-	
+
 	public DoublePlus getVolOfDist() {
 		return volOfDist;
 	}
-	
+
 	abstract public void setCurve();
-	
-	public void setHeight(double height) {
-		this.height = height;
-	}
-	
-	public void setWeight(double weight) {
-		this.weight = weight;
-	}
-	
+
 	public void setSamples(SampleTube[] samples) {
 		this.samples = samples;
 	}
-	
+
 	public void setInjection(Injection inj) {
 		this.injection = inj;
 	}
-	
+
 	public DoublePlus gfr() throws TimeTooShortFromAdminException {
 		return gfr;
 	}

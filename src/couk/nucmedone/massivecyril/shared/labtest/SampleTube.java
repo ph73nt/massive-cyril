@@ -2,6 +2,7 @@ package couk.nucmedone.massivecyril.shared.labtest;
 
 import java.util.Calendar;
 
+import couk.nucmedone.common.base.DoublePlus;
 import couk.nucmedone.massivecyril.shared.labtest.exceptions.TimeTooShortFromAdminException;
 
 public class SampleTube extends AbstractCountingTube {
