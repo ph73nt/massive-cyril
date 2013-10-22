@@ -22,6 +22,8 @@ package couk.nucmedone.massivecyril.shared.labtest;
 
 import java.util.Calendar;
 
+import couk.nucmedone.common.base.DoublePlus;
+
 /**
  * A class to hold parameters for counting tubes used in counting tests such as
  * EDTA GFR and RCM.

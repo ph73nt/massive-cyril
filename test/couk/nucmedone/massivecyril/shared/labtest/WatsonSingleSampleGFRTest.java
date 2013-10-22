@@ -26,7 +26,7 @@ import couk.nucmedone.massivecyril.shared.labtest.WatsonSingleSampleGFR;
 import couk.nucmedone.massivecyril.shared.labtest.exceptions.StandardSensitivityException;
 import couk.nucmedone.massivecyril.shared.labtest.exceptions.TimeTooShortFromAdminException;
 
-import org.junit.Assert;
+import junit.framework.Assert;
 
 import junit.framework.TestCase;
 

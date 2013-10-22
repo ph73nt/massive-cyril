@@ -20,6 +20,8 @@
  */
 package couk.nucmedone.massivecyril.shared.labtest;
 
+import couk.nucmedone.common.base.DoublePlus;
+
 /**
  * A class to hold parameter for counting reference standard flasks
  * in nuclear counting tests such as EDTA GFR and RCM.
