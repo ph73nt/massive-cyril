@@ -25,19 +25,24 @@ import couk.nucmedone.massivecyril.shared.labtest.exceptions.TimeTooShortFromAdm
 
 /**
  * Calculate an estimation of glomererular filtration rate based on a single
- * plasma sample. <br /><br />Reference:<br />A simple method of estimating glomerular filtration
- * rate, WS Watson, Eur. J. Nucl. Med. 1992(19):827
+ * plasma sample. <br />
+ * <br />
+ * Reference:<br />
+ * A simple method of estimating glomerular filtration rate, WS Watson, Eur. J.
+ * Nucl. Med. 1992(19):827
  * 
  * @author Neil J Thomson
  * 
  */
 public class WatsonSingleSampleGFR extends GFR {
 
+	private int sampleIndex = 0;
+
 	public WatsonSingleSampleGFR() throws TimeTooShortFromAdminException {
 
 	}
 
-	public void setHalftime() {
+	public void getHalftime() {
 		// TODO Auto-generated method stub
 
 	}
@@ -58,37 +63,51 @@ public class WatsonSingleSampleGFR extends GFR {
 	}
 
 	public DoublePlus gfr() throws TimeTooShortFromAdminException {
-		double mins = samples[0].secondsFromAdmin() / 60;
+
+		double mins = samples[sampleIndex].secondsFromAdmin() / 60;
 
 		// Solve the famous quadratic equation!
-		// -b/(2a) + (b^2 - 4ac).... then check if sqrt is OK
+		// (-b + sqrt(b^2 - 4ac))/2a.... check if sqrt is OK
 		DoublePlus a = new DoublePlus(mins * (0.0000017 * mins - 0.0012),
 				Double.MIN_VALUE);
 		DoublePlus b = new DoublePlus((1.31 - 0.000775 * mins) * mins,
 				Double.MIN_VALUE);
 		// var3 a bit more complex:
 		// log(ExCellVol/(vol/conc)) * ECV
-		DoublePlus c = injection.calculateVolumeInjected(true).div(
-				samples[0].getConcentration());
 		DoublePlus exCellVol = extraCellularVolume();
+		DoublePlus c = injection.calculateVolumeInjected(true).div(
+				samples[sampleIndex].getConcentration());
 		c = exCellVol.div(c);
 		c = DoublePlus.ln(c);
 		c = c.times(exCellVol);
 
-		// Part 1 is -b/2a
-		DoublePlus part1 = b.times(-1d).div(a.times(2));
-		// Part 2 b^2 - 4ac
-		DoublePlus part2 = b.times(b).minus(a.times(c).times(4));
-		// Add together... but must be positive in the REAL world (no imaginary components of kidney function in this universe!)
-		gfr = part1.plus(part2);
-		// get NaN for -ve number
+		gfr = b.times(b).minus(a.times(c).times(4));
 		gfr = DoublePlus.sqrt(gfr);
+		// Only need to consider -b + sqrt(b^2 etc) (ignore -b - sqrt(b^2 etc)):
+		// The first item on the right-hand side of the equation is positive and
+		// greater than 650 ml/min for t > 180 min, i.e., unphysiologically high
+		// for GFR. Therefore, since a is negative, only the positive value
+		// (J.Nucl.Med 1996; 37:1883-1890).
+		gfr = gfr.minus(b);
 		gfr = gfr.div(a.times(2));
 		return gfr;
 	}
-	
-	protected DoublePlus extraCellularVolume(){
-		return new DoublePlus(8116.6 * BSA.bodySurfaceArea(getPatient().getWeight(), getPatient().getHeight()) - 28.2, Double.MIN_NORMAL);
+
+	protected DoublePlus extraCellularVolume() {
+		return new DoublePlus(8116.6 * BSA.bodySurfaceArea(getPatient()
+				.getWeight(), getPatient().getHeight()) - 28.2,
+				Double.MIN_NORMAL);
+	}
+
+	/**
+	 * For GFRs where more than one sample has been provided, the single sample
+	 * GFR can be calculated for any or all samples. The default index is zero.
+	 * Use this method to set an alternative sample.
+	 * 
+	 * @param index
+	 */
+	public void setSampleIndex(int index) {
+		sampleIndex = index;
 	}
 
 }

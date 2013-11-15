@@ -200,7 +200,7 @@ public abstract class AbstractCountingTube {
 	}
 	
 	public DoublePlus cpsPerMl() {
-		return this.getCPS().div(getTubeContents());
+		return getCPS().div(getTubeContents());
 	}
 	
 	// TODO: remove all these returning calculations and make place them private, called from a constructor
@@ -209,7 +209,7 @@ public abstract class AbstractCountingTube {
 	}
 	
 	public DoublePlus getConcentration() {
-		concentration = this.cpsPerMl().div(meanSensitivity);
+		concentration = cpsPerMl().div(meanSensitivity);
 		return concentration;
 	}
 

@@ -30,7 +30,14 @@ import couk.nucmedone.massivecyril.shared.labtest.exceptions.StandardSensitivity
 
 /**
  * A class to hold parameter for counting reference standards in nuclear
- * counting tests such as EDTA GFR and RCM.
+ * counting tests such as EDTA GFR and RCM. A Standard is a tracer volume in a
+ * Flask object that has some total volume. A StandardsTube has a further
+ * dilution of the tracer and some total volume. <br />
+ * <br />
+ * A typical EDTA standard would contain 0.5ml EDTA stock solution diluted to
+ * 1l. The StandardsTube would then contain 0.5ml of this dilution further
+ * diluted to 5ml for counting.
+ * 
  * 
  * @author Neil J Thomson
  * 
@@ -40,6 +47,8 @@ public class Standard {
 	public Flask flask;
 	public StandardsTube tube;
 	public String name = "";
+
+	private DoublePlus tracerVolume;
 
 	// TODO: Enable proper setting of stock solution (eg EDTA) density
 	public double stockDensity = 1; /* g/ml */
@@ -55,29 +64,22 @@ public class Standard {
 	// TODO: Proper method to set nuclide
 	private Nuclides nuc = Isotopes.cr51;
 
-	public Standard(String name) {
+	/**
+	 * Create a new Standards object initialised with an identifying name, the
+	 * initial volume of tracer added and the total flask volume.
+	 * 
+	 * @param name An identifying name for the standard
+	 * @param tracerVol The initial tracer volume added to the flask (e.g. 0.5ml EDTA)
+	 * @param flaskVol The total flask volume (e.g. 500ml)
+	 */
+	public Standard(String name, double tracerVol, double flaskVol) {
 		this.name = name;
-		flask = new Flask();
+		flask = new Flask(tracerVol, flaskVol);
 		tube = new StandardsTube("T" + name);
 	}
 
-	public void init() {
-
-		// Set the EDTA volume in the counting tube
-		// ... first get dilution of stock in flask...
-		DoublePlus dil = flask.getTracerVolume().div(flask.getFlaskVolume());
-		// ... now scale to counting tube
-		tube.setTracerVolume(dil, stockDensity);
-
-		// Compare expected volume...
-	}
-	
-	public void setEmptyWeight(DoublePlus weight){
-		tube.setEmptyWeight(weight);
-	}
-
 	public DoublePlus sensitivity() {
-		return tube.sensitivity();
+		return tube.cpsPerMl();
 	}
 
 	public void setCountDate(Calendar date) {
@@ -124,7 +126,7 @@ public class Standard {
 	public void setRefDate(Calendar refDate) {
 		this.refDate = refDate;
 	}
-	
+
 	/**
 	 * Set the final volume used for counting the sample. The volume, for
 	 * instance, could be a nominal volume always used or an exact volume
@@ -134,7 +136,7 @@ public class Standard {
 	 * @param volume
 	 *            The volume (in millilitres) used for counting.
 	 */
-	public void setCountVolume(DoublePlus volume){
+	public void setCountVolume(DoublePlus volume) {
 		tube.setCountingVolume(volume);
 	}
 
@@ -149,13 +151,21 @@ public class Standard {
 		tube.setCounts(correctedCounts);
 	}
 
-	public void setFullWeight(DoublePlus weight) {
-		tube.setFullWeight(weight);
+	public void setWeights(DoublePlus emptyWeight, DoublePlus fullWeight) {
+		tube.setFullWeight(fullWeight);
+		tube.setEmptyWeight(emptyWeight);
+		setTracerVolume();
 	}
 
-	public void setTracerVolume(DoublePlus volume) {
-		tube.setTracerVolume(volume);
-		
+	private void setTracerVolume() {
+		// Set the EDTA volume in the counting tube
+		// ... first get dilution of stock in flask...
+		DoublePlus dil = flask.getTracerVolume().div(flask.getFlaskVolume());
+		// ... now scale to counting tube
+		tube.setTracerVolume(dil, stockDensity);
+
+		// Compare expected volume...
+
 	}
 
 }

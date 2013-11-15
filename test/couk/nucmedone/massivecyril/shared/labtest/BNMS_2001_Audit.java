@@ -24,15 +24,10 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
-import couk.nucmedone.common.patient.Patient;
-import couk.nucmedone.common.patient.PatientName;
-import couk.nucmedone.massivecyril.shared.labtest.AbstractCountingTube;
-import couk.nucmedone.massivecyril.shared.labtest.CorrectedCounts;
 import couk.nucmedone.common.base.Counts;
 import couk.nucmedone.common.base.DoublePlus;
-import couk.nucmedone.massivecyril.shared.labtest.Injection;
-import couk.nucmedone.massivecyril.shared.labtest.SampleTube;
-import couk.nucmedone.massivecyril.shared.labtest.Standard;
+import couk.nucmedone.common.patient.Patient;
+import couk.nucmedone.common.patient.PatientName;
 import couk.nucmedone.massivecyril.shared.labtest.exceptions.StandardSensitivityException;
 
 public class BNMS_2001_Audit {
@@ -42,7 +37,7 @@ public class BNMS_2001_Audit {
 			"DD-MMM-YYYY HH:mm:ss");
 
 	private static Injection[] injections;
-	private static SampleTube[] samples;
+	private static SampleTube[][] samples;
 	private static Standard[] standards;
 	private static Patient[] patients;
 
@@ -51,8 +46,9 @@ public class BNMS_2001_Audit {
 			// When?
 			Calendar cal = Calendar.getInstance();
 			cal.set(2001, Calendar.FEBRUARY, 01, 9, 0);
-			injections = new Injection[] { new Injection(10010d, 10d, 10d,
-					4.535, 6.573, cal) };
+			injections = new Injection[] {
+					new Injection(10010d, 10d, 10d, 4.535, 6.573, cal),
+					new Injection(10010d, 10d, 10d, 4.505, 6.616, cal) };
 		}
 		return injections;
 	}
@@ -60,64 +56,164 @@ public class BNMS_2001_Audit {
 	public static Standard[] getStandards() throws ParseException {
 		if (standards == null) {
 
-			// The count date
-			Calendar date = Calendar.getInstance();
-			date.setTime(countDate.parse("06-Feb-2001 18:46:46"));
-			date.set(Calendar.YEAR, 2000);
-
 			standards = new Standard[AUDIT_NUMBER];
-			standards[0] = new Standard("");
+
+			/* Patient 1 */
+
+			// The count date
+			Calendar date1 = Calendar.getInstance();
+			date1.setTime(countDate.parse("06-Feb-2001 18:46:46"));
+			date1.set(Calendar.YEAR, 2000);
+
+			standards[0] = new Standard("Audit1", 0.5, 500);
 
 			// Count date
-			standards[0].setCountDate(date);
+			standards[0].setCountDate(date1);
 			// Just make reference date the same as the count date
-			standards[0].setRefDate(date);
-			// Tracer volume
-			standards[0].setTracerVolume(new DoublePlus(0.5, AbstractCountingTube.VOLUME_ERROR));
+			standards[0].setRefDate(date1);
 			// Count volume
-			standards[0].setCountVolume(new DoublePlus(5, AbstractCountingTube.VOLUME_ERROR));
+			standards[0].setCountVolume(new DoublePlus(5,
+					AbstractCountingTube.VOLUME_ERROR));
 			// Counts
 			standards[0].setCounts(new CorrectedCounts(35281, 0, 1200));
 			// Weights
-			standards[0].setEmptyWeight(new DoublePlus(4, AbstractCountingTube.WEIGHT_ERROR));
-			standards[0].setFullWeight(new DoublePlus(4.5, AbstractCountingTube.WEIGHT_ERROR));
+			standards[0].setWeights(new DoublePlus(4.456,
+					AbstractCountingTube.WEIGHT_ERROR), new DoublePlus(4.962,
+					AbstractCountingTube.WEIGHT_ERROR));
+
+			/* Patient 2 */
+
+			// The count date
+			Calendar date2 = Calendar.getInstance();
+			date2.setTime(countDate.parse("06-Feb-2001 18:46:46"));
+			date2.set(Calendar.YEAR, 2000);
+
+			standards[1] = new Standard("Audit2", 0.5, 500);
+
+			// Count date
+			standards[1].setCountDate(date2);
+			// Just make reference date the same as the count date
+			standards[1].setRefDate(date2);
+			// Count volume
+			standards[1].setCountVolume(new DoublePlus(5,
+					AbstractCountingTube.VOLUME_ERROR));
+			// Counts
+			standards[1].setCounts(new CorrectedCounts(20020, 0, 1200));
+			// Weights
+			standards[1].setWeights(new DoublePlus(4.621,
+					AbstractCountingTube.WEIGHT_ERROR), new DoublePlus(5.12,
+					AbstractCountingTube.WEIGHT_ERROR));
+
 		}
 
 		return standards;
 	}
 
-	public static SampleTube[] getSamples() throws ParseException, StandardSensitivityException {
+	public static SampleTube[][] getSamples() throws ParseException,
+			StandardSensitivityException {
 
 		if (samples == null) {
-			SampleTube sample1 = new SampleTube("One");
+
+			/* Patient 1 */
+			SampleTube sample11 = new SampleTube("One");
 
 			// Sample time
-			Calendar sampleTime = Calendar.getInstance();
-			sampleTime.set(2001, Calendar.FEBRUARY, 1, 11, 0);
-			sample1.setSampleTime(sampleTime);
+			Calendar sampleTime11 = Calendar.getInstance();
+			sampleTime11.set(2001, Calendar.FEBRUARY, 1, 11, 0);
+			sample11.setSampleTime(sampleTime11);
 			// Admin time
-			Calendar adminTime = Calendar.getInstance();
-			adminTime.setTime(sampleTime.getTime());
-			adminTime.set(Calendar.HOUR_OF_DAY, 9);
-			sample1.setAdminTime(adminTime);
+			Calendar adminTime11 = Calendar.getInstance();
+			adminTime11.setTime(sampleTime11.getTime());
+			adminTime11.set(Calendar.HOUR_OF_DAY, 9);
+			sample11.setAdminTime(adminTime11);
 			// Count time
 			Calendar countTime = Calendar.getInstance();
-			countTime.setTime(sampleTime.getTime());
+			countTime.setTime(sampleTime11.getTime());
 			countTime.set(Calendar.HOUR_OF_DAY, 10);
 			countTime.set(Calendar.MINUTE, 41);
-			sample1.setCountDate(countTime);
+			sample11.setCountDate(countTime);
 			// Empty weight
-			sample1.setEmptyWeight(new DoublePlus(1d, AbstractCountingTube.WEIGHT_ERROR));
+			sample11.setEmptyWeight(new DoublePlus(1d,
+					AbstractCountingTube.WEIGHT_ERROR));
 			// Full weight
-			sample1.setFullWeight(new DoublePlus(3d, AbstractCountingTube.WEIGHT_ERROR));
+			sample11.setFullWeight(new DoublePlus(3d,
+					AbstractCountingTube.WEIGHT_ERROR));
 			// Set sample counts & background
-			sample1.setCounts(new CorrectedCounts(new Counts(4600, 3600),
-					new Counts(10, 3600)));
-			// Set counter sensitivity
-			Standard[] standards = getStandards();
-			sample1.setMeanSensitivity(standards[0].sensitivity());
+			sample11.setCounts(new CorrectedCounts(new Counts(4600, 1200),
+					new Counts(10, 1200)));
 
-			samples = new SampleTube[] { sample1 };
+			SampleTube sample12 = sample11.clone();
+			// Sample time
+			Calendar sampleTime12 = Calendar.getInstance();
+			sampleTime12.set(2001, Calendar.FEBRUARY, 1, 12, 0);
+			sample12.setSampleTime(sampleTime12);
+			// Set sample counts & background
+			sample12.setCounts(new CorrectedCounts(new Counts(3300, 1200),
+					new Counts(10, 1200)));
+
+			SampleTube sample13 = sample11.clone();
+			// Sample time
+			Calendar sampleTime13 = Calendar.getInstance();
+			sampleTime13.set(2001, Calendar.FEBRUARY, 1, 13, 0);
+			sample13.setSampleTime(sampleTime13);
+			// Set sample counts & background
+			sample13.setCounts(new CorrectedCounts(new Counts(2390, 1200),
+					new Counts(10, 1200)));
+
+			SampleTube[] patient1 = new SampleTube[] { sample11, sample12,
+					sample13, };
+
+			/* Patient 2 */
+
+			SampleTube sample21 = new SampleTube("One");
+
+			// Sample time
+			Calendar sampleTime21 = Calendar.getInstance();
+			sampleTime21.set(2001, Calendar.FEBRUARY, 1, 11, 0);
+			sample21.setSampleTime(sampleTime21);
+			// Admin time
+			Calendar adminTime21 = Calendar.getInstance();
+			adminTime21.setTime(sampleTime21.getTime());
+			adminTime21.set(Calendar.HOUR_OF_DAY, 9);
+			sample21.setAdminTime(adminTime21);
+			// Count time
+			Calendar countTime21 = Calendar.getInstance();
+			countTime21.setTime(sampleTime21.getTime());
+			countTime21.set(Calendar.HOUR_OF_DAY, 10);
+			countTime21.set(Calendar.MINUTE, 41);
+			sample21.setCountDate(countTime21);
+			// Empty weight
+			sample21.setEmptyWeight(new DoublePlus(1d,
+					AbstractCountingTube.WEIGHT_ERROR));
+			// Full weight
+			sample21.setFullWeight(new DoublePlus(3d,
+					AbstractCountingTube.WEIGHT_ERROR));
+			// Set sample counts & background
+			sample21.setCounts(new CorrectedCounts(new Counts(5480, 1200),
+					new Counts(10, 1200)));
+
+			SampleTube sample22 = sample21.clone();
+			// Sample time
+			Calendar sampleTime22 = Calendar.getInstance();
+			sampleTime22.set(2001, Calendar.FEBRUARY, 1, 12, 0);
+			sample22.setSampleTime(sampleTime22);
+			// Set sample counts & background
+			sample22.setCounts(new CorrectedCounts(new Counts(3690, 1200),
+					new Counts(10, 1200)));
+
+			SampleTube sample23 = sample21.clone();
+			// Sample time
+			Calendar sampleTime23 = Calendar.getInstance();
+			sampleTime23.set(2001, Calendar.FEBRUARY, 1, 13, 0);
+			sample23.setSampleTime(sampleTime23);
+			// Set sample counts & background
+			sample23.setCounts(new CorrectedCounts(new Counts(2830, 1200),
+					new Counts(10, 1200)));
+
+			SampleTube[] patient2 = new SampleTube[] { sample21, sample22,
+					sample23, };
+
+			samples = new SampleTube[][] { patient1, patient2 };
 		}
 
 		return samples;
@@ -130,16 +226,29 @@ public class BNMS_2001_Audit {
 			patient1.setPatientName(new PatientName("AUDIT2001", "ONE", "", "",
 					""));
 			// Date of birth
-			Calendar dob = Calendar.getInstance();
-			dob.set(Calendar.YEAR, 1970);
-			patient1.setDateOfBirth(dob);
+			Calendar dob1 = Calendar.getInstance();
+			dob1.set(Calendar.YEAR, 1970);
+			patient1.setDateOfBirth(dob1);
 			// height and weight
 			patient1.setHeight(1.78);
 			patient1.setWeight(70);
 			// ID
 			patient1.setPrimaryID("audit2001-1");
 
-			patients = new Patient[] { patient1 };
+			Patient patient2 = new Patient();
+			patient2.setPatientName(new PatientName("AUDIT2001", "TWO", "", "",
+					""));
+			// Date of birth
+			Calendar dob2 = Calendar.getInstance();
+			dob2.set(Calendar.YEAR, 1996);
+			patient2.setDateOfBirth(dob2);
+			// height and weight
+			patient2.setHeight(1.6);
+			patient2.setWeight(81);
+			// ID
+			patient2.setPrimaryID("audit2001-2");
+
+			patients = new Patient[] { patient1, patient2 };
 		}
 		return patients;
 	}

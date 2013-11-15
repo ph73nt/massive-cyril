@@ -26,7 +26,6 @@ import couk.nucmedone.common.base.DoublePlus;
 public class StandardsTube extends AbstractCountingTube {
 	
 	private DoublePlus tracerVolume;
-	private DoublePlus sensitivity;
 	
 	public StandardsTube(String name) {
 		super(name);
@@ -70,9 +69,11 @@ public class StandardsTube extends AbstractCountingTube {
 	 * 
 	 * @return The counter sensitivity to this standard.
 	 */
-	public DoublePlus sensitivity() {
-		sensitivity = getCPS().div(tracerVolume);
-		return sensitivity;
+	public DoublePlus cpsPerMl() {
+		double cps=getCPS().value();
+		double tubeC = getTubeContents().value();
+		double vol = tracerVolume.value();
+		return getCPS().div(tracerVolume);
 	}
 
 }

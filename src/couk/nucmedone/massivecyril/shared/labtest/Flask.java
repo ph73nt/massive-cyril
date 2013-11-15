@@ -39,7 +39,10 @@ public class Flask {
 	// TODO: Set tracer volume error
 	private double tracerError = 0.05; //ml
 	
-	public Flask(){}
+	public Flask(double tracerVolume, double totalVolume){
+		setTracerVolume(tracerVolume);
+		setFlaskVolume(totalVolume);
+	}
 	
 	/**
 	 * Set the volume (in millilitres) of total fluid in the flask the standard
@@ -47,7 +50,7 @@ public class Flask {
 	 * 
 	 * @param vol The container volume in millilitres.
 	 */
-	public void setFlaskVolume(double vol) {
+	private void setFlaskVolume(double vol) {
 		flaskVolume = new DoublePlus(vol, flaskError);
 	}
 	
@@ -68,7 +71,7 @@ public class Flask {
 	 * @param vol
 	 *            The volume of active tracer in millilitres.
 	 */
-	public void setTracerVolume(double vol) {
+	private void setTracerVolume(double vol) {
 		tracerVolume = new DoublePlus(vol, tracerError);
 	}
 

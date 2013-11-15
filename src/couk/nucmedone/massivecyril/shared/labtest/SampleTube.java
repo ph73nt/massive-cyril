@@ -32,26 +32,58 @@ public class SampleTube extends AbstractCountingTube {
 	private Calendar adminTime;
 	private Calendar sampleTime;
 	public double minimumSampleInterval = 60 * 60; // 1h in seconds!
+	public double secondsSinceAdmin = Double.NaN;
 	
 	public SampleTube(String name) {
 		super(name);
 	}
 	
+	public SampleTube clone(){
+		
+		SampleTube tube = new SampleTube("clone");
+		
+		Calendar t1 = Calendar.getInstance();
+		t1.setTimeInMillis(adminTime.getTimeInMillis());
+		tube.setAdminTime(t1);
+		
+		Calendar t2 = Calendar.getInstance();
+		t2.setTimeInMillis(sampleTime.getTimeInMillis());
+		tube.setSampleTime(t2);
+		
+		Calendar t3 = Calendar.getInstance();
+		t3.setTimeInMillis(countDateTime.getTimeInMillis());
+		tube.setCountDate(t3);
+		
+		tube.density = density;
+		
+		tube.weightEmpty = weightEmpty;
+		tube.weightFull = weightFull;
+		
+		tube.minimumSampleInterval = minimumSampleInterval;
+		
+		return tube;
+	}
+	
 	// TODO: should this be seconds from admin to sample - or both?
 	public double secondsFromAdmin() throws TimeTooShortFromAdminException {
-		double secondsSinceAdmin = countDateTime.getTimeInMillis();
-		secondsSinceAdmin -= adminTime.getTimeInMillis();
-		secondsSinceAdmin /= 1000;
 
-		// Warn if the interval is less than some threshold... which will also
-		// be thrown for silly errors like a negative time.
-		if (secondsSinceAdmin < minimumSampleInterval) {
-			String message = "Sample " + name
-					+ " has short time between administration and counting ("
-					+ secondsSinceAdmin + "s)"; 
-			throw new TimeTooShortFromAdminException(message);
+		if (Double.isNaN(secondsSinceAdmin)) {
+
+			secondsSinceAdmin = sampleTime.getTimeInMillis();
+			secondsSinceAdmin -= adminTime.getTimeInMillis();
+			secondsSinceAdmin /= 1000;
+
+			// Warn if the interval is less than some threshold... which will
+			// also be thrown for silly errors like a negative time.
+			if (secondsSinceAdmin < minimumSampleInterval) {
+				String message = "Sample "
+						+ name
+						+ " has short time between administration and counting ("
+						+ secondsSinceAdmin + "s)";
+				throw new TimeTooShortFromAdminException(message);
+			}
 		}
-		
+
 		return secondsSinceAdmin;
 	}
 	
