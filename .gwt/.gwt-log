@@ -1,0 +1,863 @@
+Public resources found in...
+Translatable source found in...
+Found 0 cached/archived units.  Used 0 / 2737 units from cache.
+Compiling...
+   20% complete (ETR: 13 seconds)
+   20% complete (ETR: 13 seconds)
+   20% complete (ETR: 13 seconds)
+   30% complete (ETR: 12 seconds)
+   40% complete (ETR: 9 seconds)
+   50% complete (ETR: 6 seconds)
+   60% complete (ETR: 4 seconds)
+   70% complete (ETR: 3 seconds)
+   80% complete (ETR: 2 seconds)
+   90% complete (ETR: 1 seconds)
+   100% complete (ETR: 0 seconds)
+   Compilation completed in 14.13 seconds
+Removing invalidated units
+Finding entry point classes
+Public resources found in...
+Translatable source found in...
+Found 2737 cached/archived units.  Used 2737 / 2737 units from cache.
+Compiling...
+   Compilation completed in 0.00 seconds
+Removing invalidated units
+Finding entry point classes
+Public resources found in...
+Translatable source found in...
+Found 2737 cached/archived units.  Used 2737 / 2737 units from cache.
+Compiling...
+   Compilation completed in 0.00 seconds
+Removing invalidated units
+Finding entry point classes
+Public resources found in...
+Translatable source found in...
+Found 2737 cached/archived units.  Used 2737 / 2783 units from cache.
+Compiling...
+   Compilation completed in 0.15 seconds
+Validating units:
+   Errors in 'file:/home/neil/workspace/Goofer/Massive-Cyril/src/couk/nucmedone/massivecyril/shared/labtest/AbstractCountingTube.java'
+      Line 36: No source code is available for type couk.nucmedone.common.base.DoublePlus; did you forget to inherit a required module?
+      Line 45: No source code is available for type java.util.Calendar; did you forget to inherit a required module?
+   Errors in 'file:/home/neil/workspace/Goofer/Massive-Cyril/src/couk/nucmedone/massivecyril/shared/labtest/AbstractCurveFit.java'
+      Line 36: No source code is available for type couk.nucmedone.common.base.DoublePlus; did you forget to inherit a required module?
+   Errors in 'file:/home/neil/workspace/Goofer/Massive-Cyril/src/couk/nucmedone/massivecyril/shared/labtest/AbstractLogCurveFit.java'
+      Line 28: No source code is available for type couk.nucmedone.common.base.DoublePlus; did you forget to inherit a required module?
+   Errors in 'file:/home/neil/workspace/Goofer/Massive-Cyril/test/couk/nucmedone/massivecyril/shared/labtest/AllTests.java'
+      Line 28: No source code is available for type junit.framework.Test; did you forget to inherit a required module?
+      Line 29: No source code is available for type junit.framework.TestSuite; did you forget to inherit a required module?
+   Errors in 'file:/home/neil/workspace/Goofer/Massive-Cyril/test/couk/nucmedone/massivecyril/shared/labtest/BNMS_2001_Audit.java'
+      Line 36: No source code is available for type java.text.SimpleDateFormat; did you forget to inherit a required module?
+      Line 42: No source code is available for type couk.nucmedone.common.patient.Patient; did you forget to inherit a required module?
+      Line 47: No source code is available for type java.util.Calendar; did you forget to inherit a required module?
+      Line 75: No source code is available for type couk.nucmedone.common.base.DoublePlus; did you forget to inherit a required module?
+      Line 142: No source code is available for type couk.nucmedone.common.base.Counts; did you forget to inherit a required module?
+      Line 226: No source code is available for type couk.nucmedone.common.patient.PatientName; did you forget to inherit a required module?
+   Errors in 'file:/home/neil/workspace/Goofer/Massive-Cyril/test/couk/nucmedone/massivecyril/shared/labtest/BSATest.java'
+      Line 27: No source code is available for type junit.framework.TestCase; did you forget to inherit a required module?
+      Line 44: No source code is available for type org.junit.Assert; did you forget to inherit a required module?
+   Errors in 'file:/home/neil/workspace/Goofer/Massive-Cyril/src/couk/nucmedone/massivecyril/shared/labtest/ChantlerGFR.java'
+      Line 13: No source code is available for type couk.nucmedone.common.base.DoublePlus; did you forget to inherit a required module?
+   Errors in 'file:/home/neil/workspace/Goofer/Massive-Cyril/test/couk/nucmedone/massivecyril/shared/labtest/ChantlerGFRTest.java'
+      Line 34: No source code is available for type couk.nucmedone.common.base.DoublePlus; did you forget to inherit a required module?
+      Line 36: No source code is available for type org.junit.Assert; did you forget to inherit a required module?
+   Errors in 'file:/home/neil/workspace/Goofer/Massive-Cyril/src/couk/nucmedone/massivecyril/shared/labtest/CorrectedCounts.java'
+      Line 36: No source code is available for type couk.nucmedone.common.base.Counts; did you forget to inherit a required module?
+      Line 38: No source code is available for type couk.nucmedone.common.base.DoublePlus; did you forget to inherit a required module?
+   Errors in 'file:/home/neil/workspace/Goofer/Massive-Cyril/test/couk/nucmedone/massivecyril/shared/labtest/CorrectedCountsTest.java'
+      Line 27: No source code is available for type junit.framework.TestCase; did you forget to inherit a required module?
+      Line 44: No source code is available for type org.junit.Assert; did you forget to inherit a required module?
+   Errors in 'file:/home/neil/workspace/Goofer/Massive-Cyril/src/couk/nucmedone/massivecyril/shared/labtest/Corrections.java'
+      Line 11: No source code is available for type couk.nucmedone.common.base.DoublePlus; did you forget to inherit a required module?
+   Errors in 'file:/home/neil/workspace/Goofer/Massive-Cyril/test/couk/nucmedone/massivecyril/shared/labtest/CorrectionsTest.java'
+      Line 19: No source code is available for type couk.nucmedone.common.base.DoublePlus; did you forget to inherit a required module?
+      Line 24: No source code is available for type org.junit.Assert; did you forget to inherit a required module?
+   Errors in 'file:/home/neil/workspace/Goofer/Massive-Cyril/test/couk/nucmedone/massivecyril/shared/labtest/DoublePlusTest.java'
+      Line 27: No source code is available for type junit.framework.TestCase; did you forget to inherit a required module?
+      Line 35: No source code is available for type couk.nucmedone.common.base.DoublePlus; did you forget to inherit a required module?
+      Line 59: No source code is available for type org.junit.Assert; did you forget to inherit a required module?
+   Errors in 'file:/home/neil/workspace/Goofer/Massive-Cyril/test/couk/nucmedone/massivecyril/shared/labtest/ErrorsTest.java'
+      Line 27: No source code is available for type junit.framework.TestCase; did you forget to inherit a required module?
+      Line 39: No source code is available for type couk.nucmedone.common.base.Errors; did you forget to inherit a required module?
+      Line 40: No source code is available for type org.junit.Assert; did you forget to inherit a required module?
+   Errors in 'file:/home/neil/workspace/Goofer/Massive-Cyril/src/couk/nucmedone/massivecyril/shared/labtest/Flask.java'
+      Line 34: No source code is available for type couk.nucmedone.common.base.DoublePlus; did you forget to inherit a required module?
+   Errors in 'file:/home/neil/workspace/Goofer/Massive-Cyril/src/couk/nucmedone/massivecyril/shared/labtest/FlemingSingleSampleGFR.java'
+      Line 41: No source code is available for type couk.nucmedone.common.base.DoublePlus; did you forget to inherit a required module?
+   Errors in 'file:/home/neil/workspace/Goofer/Massive-Cyril/src/couk/nucmedone/massivecyril/shared/labtest/GFR.java'
+      Line 44: No source code is available for type couk.nucmedone.common.base.DoublePlus; did you forget to inherit a required module?
+      Line 48: No source code is available for type couk.nucmedone.common.patient.Patient; did you forget to inherit a required module?
+   Errors in 'file:/home/neil/workspace/Goofer/Massive-Cyril/test/couk/nucmedone/massivecyril/shared/labtest/GFRTest.java'
+      Line 27: No source code is available for type junit.framework.TestCase; did you forget to inherit a required module?
+      Line 45: No source code is available for type org.junit.Assert; did you forget to inherit a required module?
+   Errors in 'file:/home/neil/workspace/Goofer/Massive-Cyril/src/couk/nucmedone/massivecyril/shared/labtest/Injection.java'
+      Line 36: No source code is available for type couk.nucmedone.common.base.DoublePlus; did you forget to inherit a required module?
+      Line 47: No source code is available for type java.util.Calendar; did you forget to inherit a required module?
+   Errors in 'file:/home/neil/workspace/Goofer/Massive-Cyril/test/couk/nucmedone/massivecyril/shared/labtest/InjectionTest.java'
+      Line 28: No source code is available for type junit.framework.TestCase; did you forget to inherit a required module?
+      Line 43: No source code is available for type couk.nucmedone.common.base.DoublePlus; did you forget to inherit a required module?
+      Line 45: No source code is available for type org.junit.Assert; did you forget to inherit a required module?
+   Errors in 'file:/home/neil/workspace/Goofer/Massive-Cyril/src/couk/nucmedone/massivecyril/shared/labtest/LogCurveFit.java'
+      Line 40: No source code is available for type couk.nucmedone.common.base.DoublePlus; did you forget to inherit a required module?
+   Errors in 'file:/home/neil/workspace/Goofer/Massive-Cyril/src/couk/nucmedone/massivecyril/shared/labtest/MultiSampleGFR.java'
+      Line 9: No source code is available for type couk.nucmedone.common.base.DoublePlus; did you forget to inherit a required module?
+      Line 11: No source code is available for type couk.nucmedone.common.gsl.LeastSquaresFit; did you forget to inherit a required module?
+   Errors in 'file:/home/neil/workspace/Goofer/Massive-Cyril/test/couk/nucmedone/massivecyril/shared/labtest/MultiSampleGFRTest.java'
+      Line 38: No source code is available for type org.junit.Assert; did you forget to inherit a required module?
+      Line 46: No source code is available for type couk.nucmedone.common.base.DoublePlus; did you forget to inherit a required module?
+   Errors in 'file:/home/neil/workspace/Goofer/Massive-Cyril/src/couk/nucmedone/massivecyril/shared/labtest/NormalGFRRange.java'
+      Line 33: No source code is available for type couk.nucmedone.common.base.DoublePlus; did you forget to inherit a required module?
+   Errors in 'file:/home/neil/workspace/Goofer/Massive-Cyril/src/couk/nucmedone/massivecyril/shared/labtest/SampleTube.java'
+      Line 32: No source code is available for type java.util.Calendar; did you forget to inherit a required module?
+      Line 106: No source code is available for type couk.nucmedone.common.base.DoublePlus; did you forget to inherit a required module?
+   Errors in 'file:/home/neil/workspace/Goofer/Massive-Cyril/src/couk/nucmedone/massivecyril/shared/labtest/Standard.java'
+      Line 51: No source code is available for type couk.nucmedone.common.base.DoublePlus; did you forget to inherit a required module?
+      Line 62: No source code is available for type java.util.Calendar; did you forget to inherit a required module?
+      Line 65: No source code is available for type couk.nucmedone.common.nuclides.Nuclides; did you forget to inherit a required module?
+      Line 65: No source code is available for type couk.nucmedone.common.nuclides.Isotopes; did you forget to inherit a required module?
+      Line 98: No source code is available for type couk.nucmedone.common.nuclides.Decay; did you forget to inherit a required module?
+   Errors in 'file:/home/neil/workspace/Goofer/Massive-Cyril/src/couk/nucmedone/massivecyril/shared/labtest/StandardsTube.java'
+      Line 28: No source code is available for type couk.nucmedone.common.base.DoublePlus; did you forget to inherit a required module?
+   Errors in 'file:/home/neil/workspace/Goofer/Massive-Cyril/test/couk/nucmedone/massivecyril/shared/labtest/StandardsTubeTest.java'
+      Line 29: No source code is available for type junit.framework.TestCase; did you forget to inherit a required module?
+      Line 40: No source code is available for type couk.nucmedone.common.base.DoublePlus; did you forget to inherit a required module?
+      Line 47: No source code is available for type org.junit.Assert; did you forget to inherit a required module?
+   Errors in 'file:/home/neil/workspace/Goofer/Massive-Cyril/src/couk/nucmedone/massivecyril/shared/labtest/TwoPointLogFit.java'
+      Line 34: No source code is available for type couk.nucmedone.common.base.DoublePlus; did you forget to inherit a required module?
+   Errors in 'file:/home/neil/workspace/Goofer/Massive-Cyril/test/couk/nucmedone/massivecyril/shared/labtest/TwoSampleGFRTest.java'
+      Line 42: No source code is available for type org.junit.Assert; did you forget to inherit a required module?
+      Line 67: No source code is available for type couk.nucmedone.common.base.DoublePlus; did you forget to inherit a required module?
+   Errors in 'file:/home/neil/workspace/Goofer/Massive-Cyril/src/couk/nucmedone/massivecyril/shared/labtest/WatsonSingleSampleGFR.java'
+      Line 50: No source code is available for type couk.nucmedone.common.base.DoublePlus; did you forget to inherit a required module?
+   Errors in 'file:/home/neil/workspace/Goofer/Massive-Cyril/test/couk/nucmedone/massivecyril/shared/labtest/WatsonSingleSampleGFRTest.java'
+      Line 33: No source code is available for type junit.framework.TestCase; did you forget to inherit a required module?
+      Line 39: No source code is available for type couk.nucmedone.common.base.DoublePlus; did you forget to inherit a required module?
+      Line 41: No source code is available for type org.junit.Assert; did you forget to inherit a required module?
+      Line 65: The method printf(String) is undefined for the type PrintStream
+Removing invalidated units
+Finding entry point classes
+Rebinding com.google.gwt.i18n.client.impl.LocaleInfoImpl
+   Invoking generator com.google.gwt.i18n.rebind.LocaleInfoGenerator
+      Processing interface com.google.gwt.i18n.client.constants.NumberConstantsImpl
+         Generating method body for notANumber()
+         Generating method body for currencyPattern()
+         Generating method body for decimalPattern()
+         Generating method body for decimalSeparator()
+         Generating method body for defCurrencyCode()
+         Generating method body for exponentialSymbol()
+         Generating method body for globalCurrencyPattern()
+         Generating method body for groupingSeparator()
+         Generating method body for infinity()
+         Generating method body for minusSign()
+         Generating method body for monetaryGroupingSeparator()
+         Generating method body for monetarySeparator()
+         Generating method body for percent()
+         Generating method body for percentPattern()
+         Generating method body for perMill()
+         Generating method body for plusSign()
+         Generating method body for scientificPattern()
+         Generating method body for simpleCurrencyPattern()
+         Generating method body for zeroDigit()
+   Adding '3' new generated units
+      Compiling...
+         Compilation completed in 0.02 seconds
+      Removing invalidated units
+Public resources found in...
+Translatable source found in...
+Found 0 cached/archived units.  Used 0 / 2737 units from cache.
+Compiling...
+   30% complete (ETR: 11 seconds)
+   30% complete (ETR: 11 seconds)
+   30% complete (ETR: 11 seconds)
+   30% complete (ETR: 11 seconds)
+   40% complete (ETR: 9 seconds)
+   50% complete (ETR: 6 seconds)
+   60% complete (ETR: 5 seconds)
+   70% complete (ETR: 4 seconds)
+   80% complete (ETR: 2 seconds)
+   90% complete (ETR: 1 seconds)
+   100% complete (ETR: 0 seconds)
+   Compilation completed in 42.90 seconds
+Removing invalidated units
+Finding entry point classes
+Public resources found in...
+Translatable source found in...
+Found 2737 cached/archived units.  Used 2737 / 2737 units from cache.
+Compiling...
+   Compilation completed in 0.00 seconds
+Removing invalidated units
+Finding entry point classes
+Public resources found in...
+Translatable source found in...
+Found 2737 cached/archived units.  Used 2737 / 2737 units from cache.
+Compiling...
+   Compilation completed in 0.00 seconds
+Removing invalidated units
+Finding entry point classes
+Public resources found in...
+Translatable source found in...
+Found 0 cached/archived units.  Used 0 / 2737 units from cache.
+Compiling...
+   60% complete (ETR: 3 seconds)
+   60% complete (ETR: 3 seconds)
+   60% complete (ETR: 3 seconds)
+   60% complete (ETR: 3 seconds)
+   60% complete (ETR: 3 seconds)
+   60% complete (ETR: 3 seconds)
+   60% complete (ETR: 3 seconds)
+   70% complete (ETR: 3 seconds)
+   80% complete (ETR: 2 seconds)
+   90% complete (ETR: 1 seconds)
+   100% complete (ETR: 0 seconds)
+   Compilation completed in 15.13 seconds
+Removing invalidated units
+Finding entry point classes
+Public resources found in...
+Translatable source found in...
+Found 2737 cached/archived units.  Used 2737 / 2737 units from cache.
+Compiling...
+   Compilation completed in 0.00 seconds
+Removing invalidated units
+Finding entry point classes
+Public resources found in...
+Translatable source found in...
+Found 2737 cached/archived units.  Used 2737 / 2737 units from cache.
+Compiling...
+   Compilation completed in 0.00 seconds
+Removing invalidated units
+Finding entry point classes
+Public resources found in...
+Translatable source found in...
+Found 0 cached/archived units.  Used 0 / 2783 units from cache.
+Compiling...
+   30% complete (ETR: 9 seconds)
+   30% complete (ETR: 9 seconds)
+   30% complete (ETR: 8 seconds)
+   30% complete (ETR: 8 seconds)
+   40% complete (ETR: 8 seconds)
+   50% complete (ETR: 6 seconds)
+   60% complete (ETR: 5 seconds)
+   70% complete (ETR: 4 seconds)
+   80% complete (ETR: 2 seconds)
+   90% complete (ETR: 1 seconds)
+   100% complete (ETR: 0 seconds)
+   Compilation completed in 14.44 seconds
+Validating units:
+   Errors in 'file:/home/neil/workspace/Goofer/Massive-Cyril/src/couk/nucmedone/massivecyril/shared/labtest/AbstractCountingTube.java'
+      Line 36: No source code is available for type couk.nucmedone.common.base.DoublePlus; did you forget to inherit a required module?
+      Line 45: No source code is available for type java.util.Calendar; did you forget to inherit a required module?
+   Errors in 'file:/home/neil/workspace/Goofer/Massive-Cyril/src/couk/nucmedone/massivecyril/shared/labtest/AbstractCurveFit.java'
+      Line 36: No source code is available for type couk.nucmedone.common.base.DoublePlus; did you forget to inherit a required module?
+   Errors in 'file:/home/neil/workspace/Goofer/Massive-Cyril/src/couk/nucmedone/massivecyril/shared/labtest/AbstractLogCurveFit.java'
+      Line 28: No source code is available for type couk.nucmedone.common.base.DoublePlus; did you forget to inherit a required module?
+   Errors in 'file:/home/neil/workspace/Goofer/Massive-Cyril/test/couk/nucmedone/massivecyril/shared/labtest/AllTests.java'
+      Line 28: No source code is available for type junit.framework.Test; did you forget to inherit a required module?
+      Line 29: No source code is available for type junit.framework.TestSuite; did you forget to inherit a required module?
+   Errors in 'file:/home/neil/workspace/Goofer/Massive-Cyril/test/couk/nucmedone/massivecyril/shared/labtest/BNMS_2001_Audit.java'
+      Line 36: No source code is available for type java.text.SimpleDateFormat; did you forget to inherit a required module?
+      Line 42: No source code is available for type couk.nucmedone.common.patient.Patient; did you forget to inherit a required module?
+      Line 47: No source code is available for type java.util.Calendar; did you forget to inherit a required module?
+      Line 75: No source code is available for type couk.nucmedone.common.base.DoublePlus; did you forget to inherit a required module?
+      Line 142: No source code is available for type couk.nucmedone.common.base.Counts; did you forget to inherit a required module?
+      Line 226: No source code is available for type couk.nucmedone.common.patient.PatientName; did you forget to inherit a required module?
+   Errors in 'file:/home/neil/workspace/Goofer/Massive-Cyril/test/couk/nucmedone/massivecyril/shared/labtest/BSATest.java'
+      Line 27: No source code is available for type junit.framework.TestCase; did you forget to inherit a required module?
+      Line 44: No source code is available for type org.junit.Assert; did you forget to inherit a required module?
+   Errors in 'file:/home/neil/workspace/Goofer/Massive-Cyril/src/couk/nucmedone/massivecyril/shared/labtest/ChantlerGFR.java'
+      Line 13: No source code is available for type couk.nucmedone.common.base.DoublePlus; did you forget to inherit a required module?
+   Errors in 'file:/home/neil/workspace/Goofer/Massive-Cyril/test/couk/nucmedone/massivecyril/shared/labtest/ChantlerGFRTest.java'
+      Line 34: No source code is available for type couk.nucmedone.common.base.DoublePlus; did you forget to inherit a required module?
+      Line 36: No source code is available for type org.junit.Assert; did you forget to inherit a required module?
+   Errors in 'file:/home/neil/workspace/Goofer/Massive-Cyril/src/couk/nucmedone/massivecyril/shared/labtest/CorrectedCounts.java'
+      Line 36: No source code is available for type couk.nucmedone.common.base.Counts; did you forget to inherit a required module?
+      Line 38: No source code is available for type couk.nucmedone.common.base.DoublePlus; did you forget to inherit a required module?
+   Errors in 'file:/home/neil/workspace/Goofer/Massive-Cyril/test/couk/nucmedone/massivecyril/shared/labtest/CorrectedCountsTest.java'
+      Line 27: No source code is available for type junit.framework.TestCase; did you forget to inherit a required module?
+      Line 44: No source code is available for type org.junit.Assert; did you forget to inherit a required module?
+   Errors in 'file:/home/neil/workspace/Goofer/Massive-Cyril/src/couk/nucmedone/massivecyril/shared/labtest/Corrections.java'
+      Line 11: No source code is available for type couk.nucmedone.common.base.DoublePlus; did you forget to inherit a required module?
+   Errors in 'file:/home/neil/workspace/Goofer/Massive-Cyril/test/couk/nucmedone/massivecyril/shared/labtest/CorrectionsTest.java'
+      Line 19: No source code is available for type couk.nucmedone.common.base.DoublePlus; did you forget to inherit a required module?
+      Line 24: No source code is available for type org.junit.Assert; did you forget to inherit a required module?
+   Errors in 'file:/home/neil/workspace/Goofer/Massive-Cyril/test/couk/nucmedone/massivecyril/shared/labtest/DoublePlusTest.java'
+      Line 27: No source code is available for type junit.framework.TestCase; did you forget to inherit a required module?
+      Line 35: No source code is available for type couk.nucmedone.common.base.DoublePlus; did you forget to inherit a required module?
+      Line 59: No source code is available for type org.junit.Assert; did you forget to inherit a required module?
+   Errors in 'file:/home/neil/workspace/Goofer/Massive-Cyril/test/couk/nucmedone/massivecyril/shared/labtest/ErrorsTest.java'
+      Line 27: No source code is available for type junit.framework.TestCase; did you forget to inherit a required module?
+      Line 39: No source code is available for type couk.nucmedone.common.base.Errors; did you forget to inherit a required module?
+      Line 40: No source code is available for type org.junit.Assert; did you forget to inherit a required module?
+   Errors in 'file:/home/neil/workspace/Goofer/Massive-Cyril/src/couk/nucmedone/massivecyril/shared/labtest/Flask.java'
+      Line 34: No source code is available for type couk.nucmedone.common.base.DoublePlus; did you forget to inherit a required module?
+   Errors in 'file:/home/neil/workspace/Goofer/Massive-Cyril/src/couk/nucmedone/massivecyril/shared/labtest/FlemingSingleSampleGFR.java'
+      Line 41: No source code is available for type couk.nucmedone.common.base.DoublePlus; did you forget to inherit a required module?
+   Errors in 'file:/home/neil/workspace/Goofer/Massive-Cyril/src/couk/nucmedone/massivecyril/shared/labtest/GFR.java'
+      Line 44: No source code is available for type couk.nucmedone.common.base.DoublePlus; did you forget to inherit a required module?
+      Line 48: No source code is available for type couk.nucmedone.common.patient.Patient; did you forget to inherit a required module?
+   Errors in 'file:/home/neil/workspace/Goofer/Massive-Cyril/test/couk/nucmedone/massivecyril/shared/labtest/GFRTest.java'
+      Line 27: No source code is available for type junit.framework.TestCase; did you forget to inherit a required module?
+      Line 45: No source code is available for type org.junit.Assert; did you forget to inherit a required module?
+   Errors in 'file:/home/neil/workspace/Goofer/Massive-Cyril/src/couk/nucmedone/massivecyril/shared/labtest/Injection.java'
+      Line 36: No source code is available for type couk.nucmedone.common.base.DoublePlus; did you forget to inherit a required module?
+      Line 47: No source code is available for type java.util.Calendar; did you forget to inherit a required module?
+   Errors in 'file:/home/neil/workspace/Goofer/Massive-Cyril/test/couk/nucmedone/massivecyril/shared/labtest/InjectionTest.java'
+      Line 28: No source code is available for type junit.framework.TestCase; did you forget to inherit a required module?
+      Line 43: No source code is available for type couk.nucmedone.common.base.DoublePlus; did you forget to inherit a required module?
+      Line 45: No source code is available for type org.junit.Assert; did you forget to inherit a required module?
+   Errors in 'file:/home/neil/workspace/Goofer/Massive-Cyril/src/couk/nucmedone/massivecyril/shared/labtest/LogCurveFit.java'
+      Line 40: No source code is available for type couk.nucmedone.common.base.DoublePlus; did you forget to inherit a required module?
+   Errors in 'file:/home/neil/workspace/Goofer/Massive-Cyril/src/couk/nucmedone/massivecyril/shared/labtest/MultiSampleGFR.java'
+      Line 9: No source code is available for type couk.nucmedone.common.base.DoublePlus; did you forget to inherit a required module?
+      Line 11: No source code is available for type couk.nucmedone.common.gsl.LeastSquaresFit; did you forget to inherit a required module?
+   Errors in 'file:/home/neil/workspace/Goofer/Massive-Cyril/test/couk/nucmedone/massivecyril/shared/labtest/MultiSampleGFRTest.java'
+      Line 38: No source code is available for type org.junit.Assert; did you forget to inherit a required module?
+      Line 46: No source code is available for type couk.nucmedone.common.base.DoublePlus; did you forget to inherit a required module?
+   Errors in 'file:/home/neil/workspace/Goofer/Massive-Cyril/src/couk/nucmedone/massivecyril/shared/labtest/NormalGFRRange.java'
+      Line 33: No source code is available for type couk.nucmedone.common.base.DoublePlus; did you forget to inherit a required module?
+   Errors in 'file:/home/neil/workspace/Goofer/Massive-Cyril/src/couk/nucmedone/massivecyril/shared/labtest/SampleTube.java'
+      Line 32: No source code is available for type java.util.Calendar; did you forget to inherit a required module?
+      Line 106: No source code is available for type couk.nucmedone.common.base.DoublePlus; did you forget to inherit a required module?
+   Errors in 'file:/home/neil/workspace/Goofer/Massive-Cyril/src/couk/nucmedone/massivecyril/shared/labtest/Standard.java'
+      Line 51: No source code is available for type couk.nucmedone.common.base.DoublePlus; did you forget to inherit a required module?
+      Line 62: No source code is available for type java.util.Calendar; did you forget to inherit a required module?
+      Line 65: No source code is available for type couk.nucmedone.common.nuclides.Nuclides; did you forget to inherit a required module?
+      Line 65: No source code is available for type couk.nucmedone.common.nuclides.Isotopes; did you forget to inherit a required module?
+      Line 98: No source code is available for type couk.nucmedone.common.nuclides.Decay; did you forget to inherit a required module?
+   Errors in 'file:/home/neil/workspace/Goofer/Massive-Cyril/src/couk/nucmedone/massivecyril/shared/labtest/StandardsTube.java'
+      Line 28: No source code is available for type couk.nucmedone.common.base.DoublePlus; did you forget to inherit a required module?
+   Errors in 'file:/home/neil/workspace/Goofer/Massive-Cyril/test/couk/nucmedone/massivecyril/shared/labtest/StandardsTubeTest.java'
+      Line 29: No source code is available for type junit.framework.TestCase; did you forget to inherit a required module?
+      Line 40: No source code is available for type couk.nucmedone.common.base.DoublePlus; did you forget to inherit a required module?
+      Line 47: No source code is available for type org.junit.Assert; did you forget to inherit a required module?
+   Errors in 'file:/home/neil/workspace/Goofer/Massive-Cyril/src/couk/nucmedone/massivecyril/shared/labtest/TwoPointLogFit.java'
+      Line 34: No source code is available for type couk.nucmedone.common.base.DoublePlus; did you forget to inherit a required module?
+   Errors in 'file:/home/neil/workspace/Goofer/Massive-Cyril/test/couk/nucmedone/massivecyril/shared/labtest/TwoSampleGFRTest.java'
+      Line 42: No source code is available for type org.junit.Assert; did you forget to inherit a required module?
+      Line 67: No source code is available for type couk.nucmedone.common.base.DoublePlus; did you forget to inherit a required module?
+   Errors in 'file:/home/neil/workspace/Goofer/Massive-Cyril/src/couk/nucmedone/massivecyril/shared/labtest/WatsonSingleSampleGFR.java'
+      Line 50: No source code is available for type couk.nucmedone.common.base.DoublePlus; did you forget to inherit a required module?
+   Errors in 'file:/home/neil/workspace/Goofer/Massive-Cyril/test/couk/nucmedone/massivecyril/shared/labtest/WatsonSingleSampleGFRTest.java'
+      Line 33: No source code is available for type junit.framework.TestCase; did you forget to inherit a required module?
+      Line 39: No source code is available for type couk.nucmedone.common.base.DoublePlus; did you forget to inherit a required module?
+      Line 41: No source code is available for type org.junit.Assert; did you forget to inherit a required module?
+      Line 65: The method printf(String) is undefined for the type PrintStream
+Removing invalidated units
+Finding entry point classes
+Rebinding com.google.gwt.i18n.client.impl.LocaleInfoImpl
+   Invoking generator com.google.gwt.i18n.rebind.LocaleInfoGenerator
+      Processing interface com.google.gwt.i18n.client.constants.NumberConstantsImpl
+         Generating method body for notANumber()
+         Generating method body for currencyPattern()
+         Generating method body for decimalPattern()
+         Generating method body for decimalSeparator()
+         Generating method body for defCurrencyCode()
+         Generating method body for exponentialSymbol()
+         Generating method body for globalCurrencyPattern()
+         Generating method body for groupingSeparator()
+         Generating method body for infinity()
+         Generating method body for minusSign()
+         Generating method body for monetaryGroupingSeparator()
+         Generating method body for monetarySeparator()
+         Generating method body for percent()
+         Generating method body for percentPattern()
+         Generating method body for perMill()
+         Generating method body for plusSign()
+         Generating method body for scientificPattern()
+         Generating method body for simpleCurrencyPattern()
+         Generating method body for zeroDigit()
+   Adding '3' new generated units
+      Compiling...
+         Compilation completed in 0.04 seconds
+      Removing invalidated units
+Public resources found in...
+Translatable source found in...
+Found 0 cached/archived units.  Used 0 / 2737 units from cache.
+Compiling...
+   50% complete (ETR: 4 seconds)
+   50% complete (ETR: 4 seconds)
+   50% complete (ETR: 4 seconds)
+   50% complete (ETR: 4 seconds)
+   50% complete (ETR: 4 seconds)
+   50% complete (ETR: 4 seconds)
+   60% complete (ETR: 3 seconds)
+   70% complete (ETR: 3 seconds)
+   80% complete (ETR: 2 seconds)
+   90% complete (ETR: 1 seconds)
+   100% complete (ETR: 0 seconds)
+   Compilation completed in 23.30 seconds
+Removing invalidated units
+Finding entry point classes
+Public resources found in...
+Translatable source found in...
+Found 2737 cached/archived units.  Used 2737 / 2737 units from cache.
+Compiling...
+   Compilation completed in 0.00 seconds
+Removing invalidated units
+Finding entry point classes
+Public resources found in...
+Translatable source found in...
+Found 2737 cached/archived units.  Used 2737 / 2737 units from cache.
+Compiling...
+   Compilation completed in 0.00 seconds
+Removing invalidated units
+Finding entry point classes
+Public resources found in...
+Translatable source found in...
+Found 0 cached/archived units.  Used 0 / 2737 units from cache.
+Compiling...
+   30% complete (ETR: 8 seconds)
+   30% complete (ETR: 8 seconds)
+   30% complete (ETR: 8 seconds)
+   30% complete (ETR: 8 seconds)
+   40% complete (ETR: 8 seconds)
+   50% complete (ETR: 6 seconds)
+   60% complete (ETR: 4 seconds)
+   70% complete (ETR: 4 seconds)
+   80% complete (ETR: 2 seconds)
+   90% complete (ETR: 1 seconds)
+   100% complete (ETR: 0 seconds)
+   Compilation completed in 13.90 seconds
+Removing invalidated units
+Finding entry point classes
+Public resources found in...
+Translatable source found in...
+Found 2737 cached/archived units.  Used 2737 / 2737 units from cache.
+Compiling...
+   Compilation completed in 0.00 seconds
+Removing invalidated units
+Finding entry point classes
+Public resources found in...
+Translatable source found in...
+Found 2737 cached/archived units.  Used 2737 / 2737 units from cache.
+Compiling...
+   Compilation completed in 0.00 seconds
+Removing invalidated units
+Finding entry point classes
+Public resources found in...
+Translatable source found in...
+Found 2737 cached/archived units.  Used 2737 / 2784 units from cache.
+Compiling...
+   Compilation completed in 0.47 seconds
+Validating units:
+   Errors in 'file:/home/neil/workspace/Goofer/Massive-Cyril/src/couk/nucmedone/massivecyril/shared/labtest/AbstractCountingTube.java'
+      Line 36: No source code is available for type couk.nucmedone.common.base.DoublePlus; did you forget to inherit a required module?
+      Line 45: No source code is available for type java.util.Calendar; did you forget to inherit a required module?
+   Errors in 'file:/home/neil/workspace/Goofer/Massive-Cyril/src/couk/nucmedone/massivecyril/shared/labtest/AbstractCurveFit.java'
+      Line 36: No source code is available for type couk.nucmedone.common.base.DoublePlus; did you forget to inherit a required module?
+   Errors in 'file:/home/neil/workspace/Goofer/Massive-Cyril/src/couk/nucmedone/massivecyril/shared/labtest/AbstractLogCurveFit.java'
+      Line 28: No source code is available for type couk.nucmedone.common.base.DoublePlus; did you forget to inherit a required module?
+   Errors in 'file:/home/neil/workspace/Goofer/Massive-Cyril/test/couk/nucmedone/massivecyril/shared/labtest/AllTests.java'
+      Line 28: No source code is available for type junit.framework.Test; did you forget to inherit a required module?
+      Line 29: No source code is available for type junit.framework.TestSuite; did you forget to inherit a required module?
+   Errors in 'file:/home/neil/workspace/Goofer/Massive-Cyril/test/couk/nucmedone/massivecyril/shared/labtest/BNMS_2001_Audit.java'
+      Line 36: No source code is available for type java.text.SimpleDateFormat; did you forget to inherit a required module?
+      Line 42: No source code is available for type couk.nucmedone.common.patient.Patient; did you forget to inherit a required module?
+      Line 47: No source code is available for type java.util.Calendar; did you forget to inherit a required module?
+      Line 75: No source code is available for type couk.nucmedone.common.base.DoublePlus; did you forget to inherit a required module?
+      Line 142: No source code is available for type couk.nucmedone.common.base.Counts; did you forget to inherit a required module?
+      Line 226: No source code is available for type couk.nucmedone.common.patient.PatientName; did you forget to inherit a required module?
+   Errors in 'file:/home/neil/workspace/Goofer/Massive-Cyril/test/couk/nucmedone/massivecyril/shared/labtest/BSATest.java'
+      Line 27: No source code is available for type junit.framework.TestCase; did you forget to inherit a required module?
+      Line 44: No source code is available for type org.junit.Assert; did you forget to inherit a required module?
+   Errors in 'file:/home/neil/workspace/Goofer/Massive-Cyril/src/couk/nucmedone/massivecyril/shared/labtest/ChantlerGFR.java'
+      Line 13: No source code is available for type couk.nucmedone.common.base.DoublePlus; did you forget to inherit a required module?
+   Errors in 'file:/home/neil/workspace/Goofer/Massive-Cyril/test/couk/nucmedone/massivecyril/shared/labtest/ChantlerGFRTest.java'
+      Line 34: No source code is available for type couk.nucmedone.common.base.DoublePlus; did you forget to inherit a required module?
+      Line 36: No source code is available for type org.junit.Assert; did you forget to inherit a required module?
+   Errors in 'file:/home/neil/workspace/Goofer/Massive-Cyril/src/couk/nucmedone/massivecyril/shared/labtest/CorrectedCounts.java'
+      Line 36: No source code is available for type couk.nucmedone.common.base.Counts; did you forget to inherit a required module?
+      Line 38: No source code is available for type couk.nucmedone.common.base.DoublePlus; did you forget to inherit a required module?
+   Errors in 'file:/home/neil/workspace/Goofer/Massive-Cyril/test/couk/nucmedone/massivecyril/shared/labtest/CorrectedCountsTest.java'
+      Line 27: No source code is available for type junit.framework.TestCase; did you forget to inherit a required module?
+      Line 44: No source code is available for type org.junit.Assert; did you forget to inherit a required module?
+   Errors in 'file:/home/neil/workspace/Goofer/Massive-Cyril/src/couk/nucmedone/massivecyril/shared/labtest/Corrections.java'
+      Line 11: No source code is available for type couk.nucmedone.common.base.DoublePlus; did you forget to inherit a required module?
+   Errors in 'file:/home/neil/workspace/Goofer/Massive-Cyril/test/couk/nucmedone/massivecyril/shared/labtest/CorrectionsTest.java'
+      Line 19: No source code is available for type couk.nucmedone.common.base.DoublePlus; did you forget to inherit a required module?
+      Line 24: No source code is available for type org.junit.Assert; did you forget to inherit a required module?
+   Errors in 'file:/home/neil/workspace/Goofer/Massive-Cyril/test/couk/nucmedone/massivecyril/shared/labtest/DoublePlusTest.java'
+      Line 27: No source code is available for type junit.framework.TestCase; did you forget to inherit a required module?
+      Line 35: No source code is available for type couk.nucmedone.common.base.DoublePlus; did you forget to inherit a required module?
+      Line 59: No source code is available for type org.junit.Assert; did you forget to inherit a required module?
+   Errors in 'file:/home/neil/workspace/Goofer/Massive-Cyril/test/couk/nucmedone/massivecyril/shared/labtest/ErrorsTest.java'
+      Line 27: No source code is available for type junit.framework.TestCase; did you forget to inherit a required module?
+      Line 39: No source code is available for type couk.nucmedone.common.base.Errors; did you forget to inherit a required module?
+      Line 40: No source code is available for type org.junit.Assert; did you forget to inherit a required module?
+   Errors in 'file:/home/neil/workspace/Goofer/Massive-Cyril/src/couk/nucmedone/massivecyril/shared/labtest/Flask.java'
+      Line 34: No source code is available for type couk.nucmedone.common.base.DoublePlus; did you forget to inherit a required module?
+   Errors in 'file:/home/neil/workspace/Goofer/Massive-Cyril/src/couk/nucmedone/massivecyril/shared/labtest/FlemingSingleSampleGFR.java'
+      Line 41: No source code is available for type couk.nucmedone.common.base.DoublePlus; did you forget to inherit a required module?
+   Errors in 'file:/home/neil/workspace/Goofer/Massive-Cyril/src/couk/nucmedone/massivecyril/shared/labtest/GFR.java'
+      Line 44: No source code is available for type couk.nucmedone.common.base.DoublePlus; did you forget to inherit a required module?
+      Line 48: No source code is available for type couk.nucmedone.common.patient.Patient; did you forget to inherit a required module?
+   Errors in 'file:/home/neil/workspace/Goofer/Massive-Cyril/test/couk/nucmedone/massivecyril/shared/labtest/GFRTest.java'
+      Line 27: No source code is available for type junit.framework.TestCase; did you forget to inherit a required module?
+      Line 45: No source code is available for type org.junit.Assert; did you forget to inherit a required module?
+   Errors in 'file:/home/neil/workspace/Goofer/Massive-Cyril/src/couk/nucmedone/massivecyril/shared/labtest/Injection.java'
+      Line 36: No source code is available for type couk.nucmedone.common.base.DoublePlus; did you forget to inherit a required module?
+      Line 47: No source code is available for type java.util.Calendar; did you forget to inherit a required module?
+   Errors in 'file:/home/neil/workspace/Goofer/Massive-Cyril/test/couk/nucmedone/massivecyril/shared/labtest/InjectionTest.java'
+      Line 28: No source code is available for type junit.framework.TestCase; did you forget to inherit a required module?
+      Line 43: No source code is available for type couk.nucmedone.common.base.DoublePlus; did you forget to inherit a required module?
+      Line 45: No source code is available for type org.junit.Assert; did you forget to inherit a required module?
+   Errors in 'file:/home/neil/workspace/Goofer/Massive-Cyril/src/couk/nucmedone/massivecyril/shared/labtest/LogCurveFit.java'
+      Line 40: No source code is available for type couk.nucmedone.common.base.DoublePlus; did you forget to inherit a required module?
+   Errors in 'file:/home/neil/workspace/Goofer/Massive-Cyril/src/couk/nucmedone/massivecyril/shared/labtest/MultiSampleGFR.java'
+      Line 9: No source code is available for type couk.nucmedone.common.base.DoublePlus; did you forget to inherit a required module?
+      Line 11: No source code is available for type couk.nucmedone.common.gsl.LeastSquaresFit; did you forget to inherit a required module?
+   Errors in 'file:/home/neil/workspace/Goofer/Massive-Cyril/test/couk/nucmedone/massivecyril/shared/labtest/MultiSampleGFRTest.java'
+      Line 38: No source code is available for type org.junit.Assert; did you forget to inherit a required module?
+      Line 46: No source code is available for type couk.nucmedone.common.base.DoublePlus; did you forget to inherit a required module?
+   Errors in 'file:/home/neil/workspace/Goofer/Massive-Cyril/src/couk/nucmedone/massivecyril/shared/labtest/NormalGFRRange.java'
+      Line 33: No source code is available for type couk.nucmedone.common.base.DoublePlus; did you forget to inherit a required module?
+   Errors in 'file:/home/neil/workspace/Goofer/Massive-Cyril/src/couk/nucmedone/massivecyril/shared/labtest/SampleTube.java'
+      Line 32: No source code is available for type java.util.Calendar; did you forget to inherit a required module?
+      Line 106: No source code is available for type couk.nucmedone.common.base.DoublePlus; did you forget to inherit a required module?
+   Errors in 'file:/home/neil/workspace/Goofer/Massive-Cyril/src/couk/nucmedone/massivecyril/shared/labtest/Standard.java'
+      Line 51: No source code is available for type couk.nucmedone.common.base.DoublePlus; did you forget to inherit a required module?
+      Line 62: No source code is available for type java.util.Calendar; did you forget to inherit a required module?
+      Line 65: No source code is available for type couk.nucmedone.common.nuclides.Nuclides; did you forget to inherit a required module?
+      Line 65: No source code is available for type couk.nucmedone.common.nuclides.Isotopes; did you forget to inherit a required module?
+      Line 98: No source code is available for type couk.nucmedone.common.nuclides.Decay; did you forget to inherit a required module?
+   Errors in 'file:/home/neil/workspace/Goofer/Massive-Cyril/src/couk/nucmedone/massivecyril/shared/labtest/StandardsTube.java'
+      Line 28: No source code is available for type couk.nucmedone.common.base.DoublePlus; did you forget to inherit a required module?
+   Errors in 'file:/home/neil/workspace/Goofer/Massive-Cyril/test/couk/nucmedone/massivecyril/shared/labtest/StandardsTubeTest.java'
+      Line 29: No source code is available for type junit.framework.TestCase; did you forget to inherit a required module?
+      Line 40: No source code is available for type couk.nucmedone.common.base.DoublePlus; did you forget to inherit a required module?
+      Line 47: No source code is available for type org.junit.Assert; did you forget to inherit a required module?
+   Errors in 'file:/home/neil/workspace/Goofer/Massive-Cyril/src/couk/nucmedone/massivecyril/shared/labtest/TwoPointLogFit.java'
+      Line 34: No source code is available for type couk.nucmedone.common.base.DoublePlus; did you forget to inherit a required module?
+   Errors in 'file:/home/neil/workspace/Goofer/Massive-Cyril/test/couk/nucmedone/massivecyril/shared/labtest/TwoSampleGFRTest.java'
+      Line 42: No source code is available for type org.junit.Assert; did you forget to inherit a required module?
+      Line 67: No source code is available for type couk.nucmedone.common.base.DoublePlus; did you forget to inherit a required module?
+   Errors in 'file:/home/neil/workspace/Goofer/Massive-Cyril/src/couk/nucmedone/massivecyril/shared/labtest/WatsonSingleSampleGFR.java'
+      Line 50: No source code is available for type couk.nucmedone.common.base.DoublePlus; did you forget to inherit a required module?
+   Errors in 'file:/home/neil/workspace/Goofer/Massive-Cyril/test/couk/nucmedone/massivecyril/shared/labtest/WatsonSingleSampleGFRTest.java'
+      Line 33: No source code is available for type junit.framework.TestCase; did you forget to inherit a required module?
+      Line 39: No source code is available for type couk.nucmedone.common.base.DoublePlus; did you forget to inherit a required module?
+      Line 41: No source code is available for type org.junit.Assert; did you forget to inherit a required module?
+      Line 65: The method printf(String) is undefined for the type PrintStream
+Removing invalidated units
+Finding entry point classes
+Rebinding com.google.gwt.i18n.client.impl.LocaleInfoImpl
+   Invoking generator com.google.gwt.i18n.rebind.LocaleInfoGenerator
+      Processing interface com.google.gwt.i18n.client.constants.NumberConstantsImpl
+         Generating method body for notANumber()
+         Generating method body for currencyPattern()
+         Generating method body for decimalPattern()
+         Generating method body for decimalSeparator()
+         Generating method body for defCurrencyCode()
+         Generating method body for exponentialSymbol()
+         Generating method body for globalCurrencyPattern()
+         Generating method body for groupingSeparator()
+         Generating method body for infinity()
+         Generating method body for minusSign()
+         Generating method body for monetaryGroupingSeparator()
+         Generating method body for monetarySeparator()
+         Generating method body for percent()
+         Generating method body for percentPattern()
+         Generating method body for perMill()
+         Generating method body for plusSign()
+         Generating method body for scientificPattern()
+         Generating method body for simpleCurrencyPattern()
+         Generating method body for zeroDigit()
+   Adding '3' new generated units
+      Compiling...
+         Compilation completed in 0.02 seconds
+      Removing invalidated units
+Public resources found in...
+Translatable source found in...
+Found 2783 cached/archived units.  Used 2783 / 2784 units from cache.
+Compiling...
+   Compilation completed in 0.01 seconds
+Validating units:
+   Errors in 'file:/home/neil/workspace/Goofer/Massive-Cyril/src/couk/nucmedone/massivecyril/shared/labtest/AbstractCountingTube.java'
+      Line 36: No source code is available for type couk.nucmedone.common.base.DoublePlus; did you forget to inherit a required module?
+      Line 45: No source code is available for type java.util.Calendar; did you forget to inherit a required module?
+   Errors in 'file:/home/neil/workspace/Goofer/Massive-Cyril/src/couk/nucmedone/massivecyril/shared/labtest/AbstractCurveFit.java'
+      Line 36: No source code is available for type couk.nucmedone.common.base.DoublePlus; did you forget to inherit a required module?
+   Errors in 'file:/home/neil/workspace/Goofer/Massive-Cyril/src/couk/nucmedone/massivecyril/shared/labtest/AbstractLogCurveFit.java'
+      Line 28: No source code is available for type couk.nucmedone.common.base.DoublePlus; did you forget to inherit a required module?
+   Errors in 'file:/home/neil/workspace/Goofer/Massive-Cyril/test/couk/nucmedone/massivecyril/shared/labtest/AllTests.java'
+      Line 28: No source code is available for type junit.framework.Test; did you forget to inherit a required module?
+      Line 29: No source code is available for type junit.framework.TestSuite; did you forget to inherit a required module?
+   Errors in 'file:/home/neil/workspace/Goofer/Massive-Cyril/test/couk/nucmedone/massivecyril/shared/labtest/BNMS_2001_Audit.java'
+      Line 36: No source code is available for type java.text.SimpleDateFormat; did you forget to inherit a required module?
+      Line 42: No source code is available for type couk.nucmedone.common.patient.Patient; did you forget to inherit a required module?
+      Line 47: No source code is available for type java.util.Calendar; did you forget to inherit a required module?
+      Line 75: No source code is available for type couk.nucmedone.common.base.DoublePlus; did you forget to inherit a required module?
+      Line 142: No source code is available for type couk.nucmedone.common.base.Counts; did you forget to inherit a required module?
+      Line 226: No source code is available for type couk.nucmedone.common.patient.PatientName; did you forget to inherit a required module?
+   Errors in 'file:/home/neil/workspace/Goofer/Massive-Cyril/test/couk/nucmedone/massivecyril/shared/labtest/BSATest.java'
+      Line 27: No source code is available for type junit.framework.TestCase; did you forget to inherit a required module?
+      Line 44: No source code is available for type org.junit.Assert; did you forget to inherit a required module?
+   Errors in 'file:/home/neil/workspace/Goofer/Massive-Cyril/src/couk/nucmedone/massivecyril/shared/labtest/ChantlerGFR.java'
+      Line 13: No source code is available for type couk.nucmedone.common.base.DoublePlus; did you forget to inherit a required module?
+   Errors in 'file:/home/neil/workspace/Goofer/Massive-Cyril/test/couk/nucmedone/massivecyril/shared/labtest/ChantlerGFRTest.java'
+      Line 34: No source code is available for type couk.nucmedone.common.base.DoublePlus; did you forget to inherit a required module?
+      Line 36: No source code is available for type org.junit.Assert; did you forget to inherit a required module?
+   Errors in 'file:/home/neil/workspace/Goofer/Massive-Cyril/src/couk/nucmedone/massivecyril/shared/labtest/CorrectedCounts.java'
+      Line 36: No source code is available for type couk.nucmedone.common.base.Counts; did you forget to inherit a required module?
+      Line 38: No source code is available for type couk.nucmedone.common.base.DoublePlus; did you forget to inherit a required module?
+   Errors in 'file:/home/neil/workspace/Goofer/Massive-Cyril/test/couk/nucmedone/massivecyril/shared/labtest/CorrectedCountsTest.java'
+      Line 27: No source code is available for type junit.framework.TestCase; did you forget to inherit a required module?
+      Line 44: No source code is available for type org.junit.Assert; did you forget to inherit a required module?
+   Errors in 'file:/home/neil/workspace/Goofer/Massive-Cyril/src/couk/nucmedone/massivecyril/shared/labtest/Corrections.java'
+      Line 11: No source code is available for type couk.nucmedone.common.base.DoublePlus; did you forget to inherit a required module?
+   Errors in 'file:/home/neil/workspace/Goofer/Massive-Cyril/test/couk/nucmedone/massivecyril/shared/labtest/CorrectionsTest.java'
+      Line 19: No source code is available for type couk.nucmedone.common.base.DoublePlus; did you forget to inherit a required module?
+      Line 24: No source code is available for type org.junit.Assert; did you forget to inherit a required module?
+   Errors in 'file:/home/neil/workspace/Goofer/Massive-Cyril/test/couk/nucmedone/massivecyril/shared/labtest/DoublePlusTest.java'
+      Line 27: No source code is available for type junit.framework.TestCase; did you forget to inherit a required module?
+      Line 35: No source code is available for type couk.nucmedone.common.base.DoublePlus; did you forget to inherit a required module?
+      Line 59: No source code is available for type org.junit.Assert; did you forget to inherit a required module?
+   Errors in 'file:/home/neil/workspace/Goofer/Massive-Cyril/test/couk/nucmedone/massivecyril/shared/labtest/ErrorsTest.java'
+      Line 27: No source code is available for type junit.framework.TestCase; did you forget to inherit a required module?
+      Line 39: No source code is available for type couk.nucmedone.common.base.Errors; did you forget to inherit a required module?
+      Line 40: No source code is available for type org.junit.Assert; did you forget to inherit a required module?
+   Errors in 'file:/home/neil/workspace/Goofer/Massive-Cyril/src/couk/nucmedone/massivecyril/shared/labtest/Flask.java'
+      Line 34: No source code is available for type couk.nucmedone.common.base.DoublePlus; did you forget to inherit a required module?
+   Errors in 'file:/home/neil/workspace/Goofer/Massive-Cyril/src/couk/nucmedone/massivecyril/shared/labtest/FlemingSingleSampleGFR.java'
+      Line 41: No source code is available for type couk.nucmedone.common.base.DoublePlus; did you forget to inherit a required module?
+   Errors in 'file:/home/neil/workspace/Goofer/Massive-Cyril/src/couk/nucmedone/massivecyril/shared/labtest/GFR.java'
+      Line 44: No source code is available for type couk.nucmedone.common.base.DoublePlus; did you forget to inherit a required module?
+      Line 48: No source code is available for type couk.nucmedone.common.patient.Patient; did you forget to inherit a required module?
+   Errors in 'file:/home/neil/workspace/Goofer/Massive-Cyril/test/couk/nucmedone/massivecyril/shared/labtest/GFRTest.java'
+      Line 27: No source code is available for type junit.framework.TestCase; did you forget to inherit a required module?
+      Line 45: No source code is available for type org.junit.Assert; did you forget to inherit a required module?
+   Errors in 'file:/home/neil/workspace/Goofer/Massive-Cyril/src/couk/nucmedone/massivecyril/shared/labtest/Injection.java'
+      Line 36: No source code is available for type couk.nucmedone.common.base.DoublePlus; did you forget to inherit a required module?
+      Line 47: No source code is available for type java.util.Calendar; did you forget to inherit a required module?
+   Errors in 'file:/home/neil/workspace/Goofer/Massive-Cyril/test/couk/nucmedone/massivecyril/shared/labtest/InjectionTest.java'
+      Line 28: No source code is available for type junit.framework.TestCase; did you forget to inherit a required module?
+      Line 43: No source code is available for type couk.nucmedone.common.base.DoublePlus; did you forget to inherit a required module?
+      Line 45: No source code is available for type org.junit.Assert; did you forget to inherit a required module?
+   Errors in 'file:/home/neil/workspace/Goofer/Massive-Cyril/src/couk/nucmedone/massivecyril/shared/labtest/LogCurveFit.java'
+      Line 40: No source code is available for type couk.nucmedone.common.base.DoublePlus; did you forget to inherit a required module?
+   Errors in 'file:/home/neil/workspace/Goofer/Massive-Cyril/src/couk/nucmedone/massivecyril/shared/labtest/MultiSampleGFR.java'
+      Line 9: No source code is available for type couk.nucmedone.common.base.DoublePlus; did you forget to inherit a required module?
+      Line 11: No source code is available for type couk.nucmedone.common.gsl.LeastSquaresFit; did you forget to inherit a required module?
+   Errors in 'file:/home/neil/workspace/Goofer/Massive-Cyril/test/couk/nucmedone/massivecyril/shared/labtest/MultiSampleGFRTest.java'
+      Line 38: No source code is available for type org.junit.Assert; did you forget to inherit a required module?
+      Line 46: No source code is available for type couk.nucmedone.common.base.DoublePlus; did you forget to inherit a required module?
+   Errors in 'file:/home/neil/workspace/Goofer/Massive-Cyril/src/couk/nucmedone/massivecyril/shared/labtest/NormalGFRRange.java'
+      Line 33: No source code is available for type couk.nucmedone.common.base.DoublePlus; did you forget to inherit a required module?
+   Errors in 'file:/home/neil/workspace/Goofer/Massive-Cyril/src/couk/nucmedone/massivecyril/shared/labtest/SampleTube.java'
+      Line 32: No source code is available for type java.util.Calendar; did you forget to inherit a required module?
+      Line 106: No source code is available for type couk.nucmedone.common.base.DoublePlus; did you forget to inherit a required module?
+   Errors in 'file:/home/neil/workspace/Goofer/Massive-Cyril/src/couk/nucmedone/massivecyril/shared/labtest/Standard.java'
+      Line 51: No source code is available for type couk.nucmedone.common.base.DoublePlus; did you forget to inherit a required module?
+      Line 62: No source code is available for type java.util.Calendar; did you forget to inherit a required module?
+      Line 65: No source code is available for type couk.nucmedone.common.nuclides.Nuclides; did you forget to inherit a required module?
+      Line 65: No source code is available for type couk.nucmedone.common.nuclides.Isotopes; did you forget to inherit a required module?
+      Line 98: No source code is available for type couk.nucmedone.common.nuclides.Decay; did you forget to inherit a required module?
+   Errors in 'file:/home/neil/workspace/Goofer/Massive-Cyril/src/couk/nucmedone/massivecyril/shared/labtest/StandardsTube.java'
+      Line 28: No source code is available for type couk.nucmedone.common.base.DoublePlus; did you forget to inherit a required module?
+   Errors in 'file:/home/neil/workspace/Goofer/Massive-Cyril/test/couk/nucmedone/massivecyril/shared/labtest/StandardsTubeTest.java'
+      Line 29: No source code is available for type junit.framework.TestCase; did you forget to inherit a required module?
+      Line 40: No source code is available for type couk.nucmedone.common.base.DoublePlus; did you forget to inherit a required module?
+      Line 47: No source code is available for type org.junit.Assert; did you forget to inherit a required module?
+   Errors in 'file:/home/neil/workspace/Goofer/Massive-Cyril/src/couk/nucmedone/massivecyril/shared/labtest/TwoPointLogFit.java'
+      Line 34: No source code is available for type couk.nucmedone.common.base.DoublePlus; did you forget to inherit a required module?
+   Errors in 'file:/home/neil/workspace/Goofer/Massive-Cyril/test/couk/nucmedone/massivecyril/shared/labtest/TwoSampleGFRTest.java'
+      Line 42: No source code is available for type org.junit.Assert; did you forget to inherit a required module?
+      Line 67: No source code is available for type couk.nucmedone.common.base.DoublePlus; did you forget to inherit a required module?
+   Errors in 'file:/home/neil/workspace/Goofer/Massive-Cyril/src/couk/nucmedone/massivecyril/shared/labtest/WatsonSingleSampleGFR.java'
+      Line 50: No source code is available for type couk.nucmedone.common.base.DoublePlus; did you forget to inherit a required module?
+   Errors in 'file:/home/neil/workspace/Goofer/Massive-Cyril/test/couk/nucmedone/massivecyril/shared/labtest/WatsonSingleSampleGFRTest.java'
+      Line 33: No source code is available for type junit.framework.TestCase; did you forget to inherit a required module?
+      Line 39: No source code is available for type couk.nucmedone.common.base.DoublePlus; did you forget to inherit a required module?
+      Line 41: No source code is available for type org.junit.Assert; did you forget to inherit a required module?
+      Line 65: The method printf(String) is undefined for the type PrintStream
+Removing invalidated units
+Finding entry point classes
+Rebinding com.google.gwt.i18n.client.impl.LocaleInfoImpl
+   Invoking generator com.google.gwt.i18n.rebind.LocaleInfoGenerator
+      Processing interface com.google.gwt.i18n.client.constants.NumberConstantsImpl
+         Generating method body for notANumber()
+         Generating method body for currencyPattern()
+         Generating method body for decimalPattern()
+         Generating method body for decimalSeparator()
+         Generating method body for defCurrencyCode()
+         Generating method body for exponentialSymbol()
+         Generating method body for globalCurrencyPattern()
+         Generating method body for groupingSeparator()
+         Generating method body for infinity()
+         Generating method body for minusSign()
+         Generating method body for monetaryGroupingSeparator()
+         Generating method body for monetarySeparator()
+         Generating method body for percent()
+         Generating method body for percentPattern()
+         Generating method body for perMill()
+         Generating method body for plusSign()
+         Generating method body for scientificPattern()
+         Generating method body for simpleCurrencyPattern()
+         Generating method body for zeroDigit()
+   Adding '3' new generated units
+      Compiling...
+         Compilation completed in 0.00 seconds
+      Removing invalidated units
+Public resources found in...
+Translatable source found in...
+Found 0 cached/archived units.  Used 0 / 2737 units from cache.
+Compiling...
+   60% complete (ETR: 2 seconds)
+   60% complete (ETR: 2 seconds)
+   60% complete (ETR: 2 seconds)
+   60% complete (ETR: 2 seconds)
+   60% complete (ETR: 2 seconds)
+   60% complete (ETR: 2 seconds)
+   60% complete (ETR: 2 seconds)
+   70% complete (ETR: 2 seconds)
+   80% complete (ETR: 2 seconds)
+   90% complete (ETR: 1 seconds)
+   100% complete (ETR: 0 seconds)
+   Compilation completed in 16.58 seconds
+Removing invalidated units
+Finding entry point classes
+Public resources found in...
+Translatable source found in...
+Found 2737 cached/archived units.  Used 2737 / 2737 units from cache.
+Compiling...
+   Compilation completed in 0.00 seconds
+Removing invalidated units
+Finding entry point classes
+Public resources found in...
+Translatable source found in...
+Found 2737 cached/archived units.  Used 2737 / 2737 units from cache.
+Compiling...
+   Compilation completed in 0.00 seconds
+Removing invalidated units
+Finding entry point classes
+Public resources found in...
+Translatable source found in...
+Found 2737 cached/archived units.  Used 2737 / 2784 units from cache.
+Compiling...
+   Compilation completed in 0.69 seconds
+Validating units:
+   Errors in 'file:/home/neil/workspace/Goofer/Massive-Cyril/src/couk/nucmedone/massivecyril/shared/labtest/AbstractCountingTube.java'
+      Line 36: No source code is available for type couk.nucmedone.common.base.DoublePlus; did you forget to inherit a required module?
+      Line 45: No source code is available for type java.util.Calendar; did you forget to inherit a required module?
+   Errors in 'file:/home/neil/workspace/Goofer/Massive-Cyril/src/couk/nucmedone/massivecyril/shared/labtest/AbstractCurveFit.java'
+      Line 36: No source code is available for type couk.nucmedone.common.base.DoublePlus; did you forget to inherit a required module?
+   Errors in 'file:/home/neil/workspace/Goofer/Massive-Cyril/src/couk/nucmedone/massivecyril/shared/labtest/AbstractLogCurveFit.java'
+      Line 28: No source code is available for type couk.nucmedone.common.base.DoublePlus; did you forget to inherit a required module?
+   Errors in 'file:/home/neil/workspace/Goofer/Massive-Cyril/test/couk/nucmedone/massivecyril/shared/labtest/AllTests.java'
+      Line 28: No source code is available for type junit.framework.Test; did you forget to inherit a required module?
+      Line 29: No source code is available for type junit.framework.TestSuite; did you forget to inherit a required module?
+   Errors in 'file:/home/neil/workspace/Goofer/Massive-Cyril/test/couk/nucmedone/massivecyril/shared/labtest/BNMS_2001_Audit.java'
+      Line 36: No source code is available for type java.text.SimpleDateFormat; did you forget to inherit a required module?
+      Line 42: No source code is available for type couk.nucmedone.common.patient.Patient; did you forget to inherit a required module?
+      Line 47: No source code is available for type java.util.Calendar; did you forget to inherit a required module?
+      Line 75: No source code is available for type couk.nucmedone.common.base.DoublePlus; did you forget to inherit a required module?
+      Line 142: No source code is available for type couk.nucmedone.common.base.Counts; did you forget to inherit a required module?
+      Line 226: No source code is available for type couk.nucmedone.common.patient.PatientName; did you forget to inherit a required module?
+   Errors in 'file:/home/neil/workspace/Goofer/Massive-Cyril/test/couk/nucmedone/massivecyril/shared/labtest/BSATest.java'
+      Line 27: No source code is available for type junit.framework.TestCase; did you forget to inherit a required module?
+      Line 44: No source code is available for type org.junit.Assert; did you forget to inherit a required module?
+   Errors in 'file:/home/neil/workspace/Goofer/Massive-Cyril/src/couk/nucmedone/massivecyril/shared/labtest/ChantlerGFR.java'
+      Line 13: No source code is available for type couk.nucmedone.common.base.DoublePlus; did you forget to inherit a required module?
+   Errors in 'file:/home/neil/workspace/Goofer/Massive-Cyril/test/couk/nucmedone/massivecyril/shared/labtest/ChantlerGFRTest.java'
+      Line 34: No source code is available for type couk.nucmedone.common.base.DoublePlus; did you forget to inherit a required module?
+      Line 36: No source code is available for type org.junit.Assert; did you forget to inherit a required module?
+   Errors in 'file:/home/neil/workspace/Goofer/Massive-Cyril/src/couk/nucmedone/massivecyril/shared/labtest/CorrectedCounts.java'
+      Line 36: No source code is available for type couk.nucmedone.common.base.Counts; did you forget to inherit a required module?
+      Line 38: No source code is available for type couk.nucmedone.common.base.DoublePlus; did you forget to inherit a required module?
+   Errors in 'file:/home/neil/workspace/Goofer/Massive-Cyril/test/couk/nucmedone/massivecyril/shared/labtest/CorrectedCountsTest.java'
+      Line 27: No source code is available for type junit.framework.TestCase; did you forget to inherit a required module?
+      Line 44: No source code is available for type org.junit.Assert; did you forget to inherit a required module?
+   Errors in 'file:/home/neil/workspace/Goofer/Massive-Cyril/src/couk/nucmedone/massivecyril/shared/labtest/Corrections.java'
+      Line 11: No source code is available for type couk.nucmedone.common.base.DoublePlus; did you forget to inherit a required module?
+   Errors in 'file:/home/neil/workspace/Goofer/Massive-Cyril/test/couk/nucmedone/massivecyril/shared/labtest/CorrectionsTest.java'
+      Line 19: No source code is available for type couk.nucmedone.common.base.DoublePlus; did you forget to inherit a required module?
+      Line 24: No source code is available for type org.junit.Assert; did you forget to inherit a required module?
+   Errors in 'file:/home/neil/workspace/Goofer/Massive-Cyril/test/couk/nucmedone/massivecyril/shared/labtest/DoublePlusTest.java'
+      Line 27: No source code is available for type junit.framework.TestCase; did you forget to inherit a required module?
+      Line 35: No source code is available for type couk.nucmedone.common.base.DoublePlus; did you forget to inherit a required module?
+      Line 59: No source code is available for type org.junit.Assert; did you forget to inherit a required module?
+   Errors in 'file:/home/neil/workspace/Goofer/Massive-Cyril/test/couk/nucmedone/massivecyril/shared/labtest/ErrorsTest.java'
+      Line 27: No source code is available for type junit.framework.TestCase; did you forget to inherit a required module?
+      Line 39: No source code is available for type couk.nucmedone.common.base.Errors; did you forget to inherit a required module?
+      Line 40: No source code is available for type org.junit.Assert; did you forget to inherit a required module?
+   Errors in 'file:/home/neil/workspace/Goofer/Massive-Cyril/src/couk/nucmedone/massivecyril/shared/labtest/Flask.java'
+      Line 34: No source code is available for type couk.nucmedone.common.base.DoublePlus; did you forget to inherit a required module?
+   Errors in 'file:/home/neil/workspace/Goofer/Massive-Cyril/src/couk/nucmedone/massivecyril/shared/labtest/FlemingSingleSampleGFR.java'
+      Line 41: No source code is available for type couk.nucmedone.common.base.DoublePlus; did you forget to inherit a required module?
+   Errors in 'file:/home/neil/workspace/Goofer/Massive-Cyril/src/couk/nucmedone/massivecyril/shared/labtest/GFR.java'
+      Line 44: No source code is available for type couk.nucmedone.common.base.DoublePlus; did you forget to inherit a required module?
+      Line 48: No source code is available for type couk.nucmedone.common.patient.Patient; did you forget to inherit a required module?
+   Errors in 'file:/home/neil/workspace/Goofer/Massive-Cyril/test/couk/nucmedone/massivecyril/shared/labtest/GFRTest.java'
+      Line 27: No source code is available for type junit.framework.TestCase; did you forget to inherit a required module?
+      Line 45: No source code is available for type org.junit.Assert; did you forget to inherit a required module?
+   Errors in 'file:/home/neil/workspace/Goofer/Massive-Cyril/src/couk/nucmedone/massivecyril/shared/labtest/Injection.java'
+      Line 36: No source code is available for type couk.nucmedone.common.base.DoublePlus; did you forget to inherit a required module?
+      Line 47: No source code is available for type java.util.Calendar; did you forget to inherit a required module?
+   Errors in 'file:/home/neil/workspace/Goofer/Massive-Cyril/test/couk/nucmedone/massivecyril/shared/labtest/InjectionTest.java'
+      Line 28: No source code is available for type junit.framework.TestCase; did you forget to inherit a required module?
+      Line 43: No source code is available for type couk.nucmedone.common.base.DoublePlus; did you forget to inherit a required module?
+      Line 45: No source code is available for type org.junit.Assert; did you forget to inherit a required module?
+   Errors in 'file:/home/neil/workspace/Goofer/Massive-Cyril/src/couk/nucmedone/massivecyril/shared/labtest/LogCurveFit.java'
+      Line 40: No source code is available for type couk.nucmedone.common.base.DoublePlus; did you forget to inherit a required module?
+   Errors in 'file:/home/neil/workspace/Goofer/Massive-Cyril/src/couk/nucmedone/massivecyril/shared/labtest/MultiSampleGFR.java'
+      Line 9: No source code is available for type couk.nucmedone.common.base.DoublePlus; did you forget to inherit a required module?
+      Line 11: No source code is available for type couk.nucmedone.common.gsl.LeastSquaresFit; did you forget to inherit a required module?
+   Errors in 'file:/home/neil/workspace/Goofer/Massive-Cyril/test/couk/nucmedone/massivecyril/shared/labtest/MultiSampleGFRTest.java'
+      Line 38: No source code is available for type org.junit.Assert; did you forget to inherit a required module?
+      Line 46: No source code is available for type couk.nucmedone.common.base.DoublePlus; did you forget to inherit a required module?
+   Errors in 'file:/home/neil/workspace/Goofer/Massive-Cyril/src/couk/nucmedone/massivecyril/shared/labtest/NormalGFRRange.java'
+      Line 33: No source code is available for type couk.nucmedone.common.base.DoublePlus; did you forget to inherit a required module?
+   Errors in 'file:/home/neil/workspace/Goofer/Massive-Cyril/src/couk/nucmedone/massivecyril/shared/labtest/SampleTube.java'
+      Line 32: No source code is available for type java.util.Calendar; did you forget to inherit a required module?
+      Line 106: No source code is available for type couk.nucmedone.common.base.DoublePlus; did you forget to inherit a required module?
+   Errors in 'file:/home/neil/workspace/Goofer/Massive-Cyril/src/couk/nucmedone/massivecyril/shared/labtest/Standard.java'
+      Line 51: No source code is available for type couk.nucmedone.common.base.DoublePlus; did you forget to inherit a required module?
+      Line 62: No source code is available for type java.util.Calendar; did you forget to inherit a required module?
+      Line 65: No source code is available for type couk.nucmedone.common.nuclides.Nuclides; did you forget to inherit a required module?
+      Line 65: No source code is available for type couk.nucmedone.common.nuclides.Isotopes; did you forget to inherit a required module?
+      Line 98: No source code is available for type couk.nucmedone.common.nuclides.Decay; did you forget to inherit a required module?
+   Errors in 'file:/home/neil/workspace/Goofer/Massive-Cyril/src/couk/nucmedone/massivecyril/shared/labtest/StandardsTube.java'
+      Line 28: No source code is available for type couk.nucmedone.common.base.DoublePlus; did you forget to inherit a required module?
+   Errors in 'file:/home/neil/workspace/Goofer/Massive-Cyril/test/couk/nucmedone/massivecyril/shared/labtest/StandardsTubeTest.java'
+      Line 29: No source code is available for type junit.framework.TestCase; did you forget to inherit a required module?
+      Line 40: No source code is available for type couk.nucmedone.common.base.DoublePlus; did you forget to inherit a required module?
+      Line 47: No source code is available for type org.junit.Assert; did you forget to inherit a required module?
+   Errors in 'file:/home/neil/workspace/Goofer/Massive-Cyril/src/couk/nucmedone/massivecyril/shared/labtest/TwoPointLogFit.java'
+      Line 34: No source code is available for type couk.nucmedone.common.base.DoublePlus; did you forget to inherit a required module?
+   Errors in 'file:/home/neil/workspace/Goofer/Massive-Cyril/test/couk/nucmedone/massivecyril/shared/labtest/TwoSampleGFRTest.java'
+      Line 42: No source code is available for type org.junit.Assert; did you forget to inherit a required module?
+      Line 67: No source code is available for type couk.nucmedone.common.base.DoublePlus; did you forget to inherit a required module?
+   Errors in 'file:/home/neil/workspace/Goofer/Massive-Cyril/src/couk/nucmedone/massivecyril/shared/labtest/WatsonSingleSampleGFR.java'
+      Line 50: No source code is available for type couk.nucmedone.common.base.DoublePlus; did you forget to inherit a required module?
+   Errors in 'file:/home/neil/workspace/Goofer/Massive-Cyril/test/couk/nucmedone/massivecyril/shared/labtest/WatsonSingleSampleGFRTest.java'
+      Line 33: No source code is available for type junit.framework.TestCase; did you forget to inherit a required module?
+      Line 39: No source code is available for type couk.nucmedone.common.base.DoublePlus; did you forget to inherit a required module?
+      Line 41: No source code is available for type org.junit.Assert; did you forget to inherit a required module?
+      Line 65: The method printf(String) is undefined for the type PrintStream
+Removing invalidated units
+Finding entry point classes
+Rebinding com.google.gwt.i18n.client.impl.LocaleInfoImpl
+   Invoking generator com.google.gwt.i18n.rebind.LocaleInfoGenerator
+      Processing interface com.google.gwt.i18n.client.constants.NumberConstantsImpl
+         Generating method body for notANumber()
+         Generating method body for currencyPattern()
+         Generating method body for decimalPattern()
+         Generating method body for decimalSeparator()
+         Generating method body for defCurrencyCode()
+         Generating method body for exponentialSymbol()
+         Generating method body for globalCurrencyPattern()
+         Generating method body for groupingSeparator()
+         Generating method body for infinity()
+         Generating method body for minusSign()
+         Generating method body for monetaryGroupingSeparator()
+         Generating method body for monetarySeparator()
+         Generating method body for percent()
+         Generating method body for percentPattern()
+         Generating method body for perMill()
+         Generating method body for plusSign()
+         Generating method body for scientificPattern()
+         Generating method body for simpleCurrencyPattern()
+         Generating method body for zeroDigit()
+   Adding '3' new generated units
+      Compiling...
+         Compilation completed in 0.03 seconds
+      Removing invalidated units
