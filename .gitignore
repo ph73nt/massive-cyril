@@ -3,3 +3,4 @@
 /.classpath
 /.settings
 /war/WEB-INF/lib
+/target/
