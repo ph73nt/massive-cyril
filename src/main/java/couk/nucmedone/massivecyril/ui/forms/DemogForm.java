@@ -1,5 +1,7 @@
 package couk.nucmedone.massivecyril.ui.forms;
 
+import javafx.geometry.Pos;
+import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Font;
@@ -15,7 +17,7 @@ public class DemogForm extends Form {
 	@Override
 	protected void init() {
 	
-		Text title = new Text("Details");
+		Text title = new Text("Demographic details");
 		title.setFont(Font.font("Tahoma", FontWeight.NORMAL, 20));
 		grid.add(title, 0, row, 2, 1);
 		
@@ -26,11 +28,20 @@ public class DemogForm extends Form {
 		addField("Identifier:", idField);
 	
 		TextField oidField = new TextField();
-		addField("Secondary IDs (ID1, ID2, ID3...)", oidField);
+		addField("Secondary IDs (ID1, ID2, ...):", oidField);
 
 		DatePicker dob = new DatePicker();
 		dob.setShowWeekNumbers(false);
 		addField("DOB (dd/mm/yyyy):", dob);
+		
+		TextField heightField = new TextField();
+		addField("Height (cm):", heightField);
+		
+		TextField weightField = new TextField();
+		addField("Weight (kg):", weightField);
+		
+		Button nextBtn = new Button("Next");
+		addButton(nextBtn);
 					
 	}
 	
