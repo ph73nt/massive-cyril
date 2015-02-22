@@ -1,6 +1,12 @@
 package couk.nucmedone.massivecyril.ui.forms;
 
-import javafx.geometry.Pos;
+import java.time.LocalDate;
+import java.util.Calendar;
+
+import couk.nucmedone.common.patient.Patient;
+import javafx.event.ActionEvent;
+import javafx.event.Event;
+import javafx.event.EventHandler;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
@@ -9,6 +15,13 @@ import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 
 public class DemogForm extends Form {
+
+	private final DatePicker dob = new DatePicker();
+	private final TextField nameField = new TextField();
+	private final TextField idField = new TextField();
+	private final TextField oidField = new TextField();
+	private final TextField heightField = new TextField();
+	private final TextField weightField = new TextField();
 
 	public DemogForm(){
 		super();
@@ -21,26 +34,31 @@ public class DemogForm extends Form {
 		title.setFont(Font.font("Tahoma", FontWeight.NORMAL, 20));
 		grid.add(title, 0, row, 2, 1);
 		
-		TextField nameField = new TextField();
-		addField("Name:", nameField);
-
-		TextField idField = new TextField();
-		addField("Identifier:", idField);
-	
-		TextField oidField = new TextField();
-		addField("Secondary IDs (ID1, ID2, ...):", oidField);
-
-		DatePicker dob = new DatePicker();
 		dob.setShowWeekNumbers(false);
+		
+		addField("Name:", nameField);
+		addField("Identifier:", idField);
+		addField("Secondary IDs (ID1, ID2, ...):", oidField);
+		addField("Height (cm):", heightField);
+		addField("Weight (kg):", weightField);
 		addField("DOB (dd/mm/yyyy):", dob);
 		
-		TextField heightField = new TextField();
-		addField("Height (cm):", heightField);
-		
-		TextField weightField = new TextField();
-		addField("Weight (kg):", weightField);
-		
 		Button nextBtn = new Button("Next");
+		nextBtn.setOnAction(new EventHandler<ActionEvent>() {
+			
+			@Override
+			public void handle(ActionEvent event) {
+				
+				Patient patient = new Patient();
+				
+				LocalDate ld = dob.getValue();
+				Calendar dobc = Calendar.getInstance();
+				dobc.set(ld.getYear(), ld.getMonthValue(), ld.getDayOfMonth());
+				patient.setDateOfBirth(dobc);
+				
+				
+			}
+		});
 		addButton(nextBtn);
 					
 	}
