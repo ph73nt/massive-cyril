@@ -9,9 +9,14 @@ import couk.nucmedone.massivecyril.ui.forms.DemogForm;
 public class UI extends Application {
 
 	private GridPane grid;
+	private final GFRControl gfrc;
 
 	public UI() {
 		super();
+		
+		// Initialise a control intermediary for GFRs 
+		gfrc = new GFRControl();
+		
 		grid = (new DemogForm()).getForm();
 	}
 
