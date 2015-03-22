@@ -15,13 +15,13 @@ import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 
 public class DemogForm extends Form {
-
-	private final DatePicker dob = new DatePicker();
-	private final TextField nameField = new TextField();
-	private final TextField idField = new TextField();
-	private final TextField oidField = new TextField();
-	private final TextField heightField = new TextField();
-	private final TextField weightField = new TextField();
+ 
+	private DatePicker dob;
+	private TextField nameField;
+	private TextField idField;
+	private TextField oidField;
+	private TextField heightField;
+	private TextField weightField;
 
 	public DemogForm(){
 		super();
@@ -30,6 +30,13 @@ public class DemogForm extends Form {
 	@Override
 	protected void init() {
 	
+		dob = new DatePicker();
+		nameField = new TextField();
+		idField = new TextField();
+		oidField = new TextField();
+		heightField = new TextField();
+		weightField = new TextField();
+
 		Text title = new Text("Demographic details");
 		title.setFont(Font.font("Tahoma", FontWeight.NORMAL, 20));
 		grid.add(title, 0, row, 2, 1);
