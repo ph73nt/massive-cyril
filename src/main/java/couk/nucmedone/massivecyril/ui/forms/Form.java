@@ -1,5 +1,7 @@
 package couk.nucmedone.massivecyril.ui.forms;
 
+import java.util.ArrayList;
+
 import javafx.geometry.HPos;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -15,6 +17,8 @@ public abstract class Form {
 	protected GridPane grid;
 	protected int row;
 	protected int cols = 3;
+	protected ArrayList<Control> fields;
+
 	
 	public Form() {
 		
@@ -49,6 +53,8 @@ public abstract class Form {
 		grid.add(theLabel, 0, ++row);
 		grid.add(field, 1, row, colSpan, 1);
 	
+		// Keep track of fields for null/empty checking
+		fields.add(field);
 	}
 	
 	public GridPane getForm(){
