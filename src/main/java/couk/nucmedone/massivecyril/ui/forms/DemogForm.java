@@ -3,9 +3,7 @@ package couk.nucmedone.massivecyril.ui.forms;
 import java.time.LocalDate;
 import java.util.Calendar;
 
-import couk.nucmedone.common.patient.Patient;
 import javafx.event.ActionEvent;
-import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
@@ -13,29 +11,37 @@ import javafx.scene.control.TextField;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
+import couk.nucmedone.common.patient.Patient;
+import couk.nucmedone.common.patient.PatientName;
 
 public class DemogForm extends Form {
  
 	private DatePicker dob;
-	private TextField nameField;
+	private TextField familyNameField;
+	private TextField givenNameField;
+	private TextField middleNameField;
+	private TextField prefixField;
 	private TextField idField;
 	private TextField oidField;
 	private TextField heightField;
 	private TextField weightField;
-
+	
 	public DemogForm(){
 		super();
 	}
-
+	
 	@Override
 	protected void init() {
 	
 		dob = new DatePicker();
-		nameField = new TextField();
+		familyNameField = new TextField();
+		givenNameField = new TextField();
+		middleNameField = new TextField();
+		prefixField = new TextField();
 		idField = new TextField();
 		oidField = new TextField();
-		heightField = new TextField();
-		weightField = new TextField();
+		heightField = new FloatTextField();
+		weightField = new FloatTextField();
 
 		Text title = new Text("Demographic details");
 		title.setFont(Font.font("Tahoma", FontWeight.NORMAL, 20));
@@ -43,12 +49,21 @@ public class DemogForm extends Form {
 		
 		dob.setShowWeekNumbers(false);
 		
-		addField("Name:", nameField);
+		addField("Title:", prefixField);
+		addField("Given Name:", givenNameField);
+		addField("MiddleNames", middleNameField);
+		addField("Family Name:", familyNameField);
 		addField("Identifier:", idField);
 		addField("Secondary IDs (ID1, ID2, ...):", oidField);
 		addField("Height (cm):", heightField);
 		addField("Weight (kg):", weightField);
 		addField("DOB (dd/mm/yyyy):", dob);
+		
+		addButton(nextButton());
+					
+	}
+	
+	private Button nextButton(){
 		
 		Button nextBtn = new Button("Next");
 		nextBtn.setOnAction(new EventHandler<ActionEvent>() {
@@ -63,11 +78,30 @@ public class DemogForm extends Form {
 				dobc.set(ld.getYear(), ld.getMonthValue(), ld.getDayOfMonth());
 				patient.setDateOfBirth(dobc);
 				
+				final String height = heightField.getText();
+				patient.setHeight(Double.parseDouble(height));
+				
+				final String weight = weightField.getText();
+				patient.setWeight(Double.parseDouble(weight));
+				
+				final String id = idField.getText();
+				patient.setPrimaryID(id);
+				
+				final String oid = oidField.getText();
+				patient.setSecondaryID(oid);
+				
+				final String family = familyNameField.getText();
+				final String given = givenNameField.getText();
+				final String middle = middleNameField.getText();
+				final String prefix = prefixField.getText();
+				PatientName patNam = new PatientName(family, given, middle, prefix, null);
+				patient.setPatientName(patNam);
 				
 			}
 		});
-		addButton(nextBtn);
-					
+		
+		return nextBtn;
+		
 	}
 	
 }
