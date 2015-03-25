@@ -17,7 +17,7 @@ public abstract class Form {
 	protected GridPane grid;
 	protected int row;
 	protected int cols = 3;
-	protected ArrayList<Control> fields;
+	protected ArrayList<Control> fields = new ArrayList<Control>();
 
 	
 	public Form() {

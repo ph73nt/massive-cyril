@@ -17,7 +17,9 @@ public class UI extends Application {
 		// Initialise a control intermediary for GFRs 
 		gfrc = new GFRControl();
 		
-		grid = (new DemogForm()).getForm();
+		final DemogForm demogForm = new DemogForm();
+		demogForm.addPatientListener(gfrc);
+		grid = demogForm.getForm();
 	}
 
 	@Override

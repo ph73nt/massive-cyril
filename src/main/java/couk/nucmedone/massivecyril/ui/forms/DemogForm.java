@@ -12,6 +12,7 @@ import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 import couk.nucmedone.common.patient.Patient;
+import couk.nucmedone.common.patient.PatientListener;
 import couk.nucmedone.common.patient.PatientName;
 
 public class DemogForm extends Form {
@@ -26,8 +27,14 @@ public class DemogForm extends Form {
 	private TextField heightField;
 	private TextField weightField;
 	
+	private PatientListener patListener;
+	
 	public DemogForm(){
 		super();
+	}
+	
+	public void addPatientListener(PatientListener listener){
+		patListener = listener;
 	}
 	
 	@Override
@@ -96,6 +103,8 @@ public class DemogForm extends Form {
 				final String prefix = prefixField.getText();
 				PatientName patNam = new PatientName(family, given, middle, prefix, null);
 				patient.setPatientName(patNam);
+				
+				patListener.patientUpdate(patient);
 				
 			}
 		});
