@@ -58,7 +58,7 @@ public class DemogForm extends Form {
 		
 		addField("Title:", prefixField);
 		addField("Given Name:", givenNameField);
-		addField("MiddleNames", middleNameField);
+		addField("Middle Names", middleNameField);
 		addField("Family Name:", familyNameField);
 		addField("Identifier:", idField);
 		addField("Secondary IDs (ID1, ID2, ...):", oidField);
