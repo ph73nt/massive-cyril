@@ -5,6 +5,7 @@ import javafx.scene.Scene;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 import couk.nucmedone.massivecyril.ui.forms.DemogForm;
+import couk.nucmedone.massivecyril.ui.forms.InjectionForm;
 
 public class UI extends Application {
 
@@ -19,7 +20,10 @@ public class UI extends Application {
 		
 		final DemogForm demogForm = new DemogForm();
 		demogForm.addPatientListener(gfrc);
-		grid = demogForm.getForm();
+//		grid = demogForm.getForm();
+		
+		final InjectionForm injectionForm = new InjectionForm();
+		grid = injectionForm.getForm();
 	}
 
 	@Override
