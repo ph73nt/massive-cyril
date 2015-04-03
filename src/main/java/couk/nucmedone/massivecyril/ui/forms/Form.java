@@ -9,9 +9,12 @@ import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.Control;
+import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
+import jfxtras.scene.control.LocalTimePicker;
 
 public abstract class Form {
 
@@ -58,18 +61,51 @@ public abstract class Form {
 		fields.add(field);
 	}
 	
-	protected void addField(Collection<Control> fields, int startCol){
+	protected void addField(Collection<Control[]> fields, int startCol){
 		
-		row++;
-		
-		Iterator<Control> it = fields.iterator();
+		Iterator<Control[]> it = fields.iterator();
 		
 		while(it.hasNext()){
-			Control control = it.next();
-			grid.add(control, startCol++, row);
+			Control control[] = it.next();
+			grid.add(control[0], startCol++, ++row);
+			grid.add(control[1], startCol++, row);
+			grid.add(control[2], startCol, row);
 		}
 		
 	}
+	
+	protected DatePicker addDateField(String name){
+		
+		DatePicker dp = new DatePicker();
+		addField(name, dp);
+		return dp;
+		
+	}
+	
+	protected FloatTextField addFloatField(String name){
+		
+		FloatTextField ftf = new FloatTextField();
+		addField(name, ftf);
+		return ftf;
+		
+	}
+	
+	protected TextField addTextField(String name){
+		
+		TextField tf = new TextField();
+		addField(name, tf);
+		return tf;
+		
+	}
+	
+	protected LocalTimePicker addTimeField(String name){
+		
+		LocalTimePicker tp = new LocalTimePicker();
+		addField(name, tp);
+		return tp;
+		
+	}
+
 	
 	public GridPane getForm(){
 		return grid;
