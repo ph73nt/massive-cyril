@@ -24,8 +24,8 @@ public class DemogForm extends Form {
 	private TextField prefixField;
 	private TextField idField;
 	private TextField oidField;
-	private TextField heightField;
-	private TextField weightField;
+	private FloatTextField heightField;
+	private FloatTextField weightField;
 	
 	private PatientListener patListener;
 	
@@ -85,11 +85,11 @@ public class DemogForm extends Form {
 				dobc.set(ld.getYear(), ld.getMonthValue(), ld.getDayOfMonth());
 				patient.setDateOfBirth(dobc);
 				
-				final String height = heightField.getText();
-				patient.setHeight(Double.parseDouble(height));
+				final double height = heightField.getValue();
+				patient.setHeight(height);
 				
-				final String weight = weightField.getText();
-				patient.setWeight(Double.parseDouble(weight));
+				final double weight = weightField.getValue();
+				patient.setWeight(weight);
 				
 				final String id = idField.getText();
 				patient.setPrimaryID(id);
