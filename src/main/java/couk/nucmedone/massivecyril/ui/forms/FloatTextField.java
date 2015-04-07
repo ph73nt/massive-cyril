@@ -4,6 +4,12 @@ import javafx.scene.control.TextField;
 
 public class FloatTextField extends TextField {
 
+	public double getValue(){
+
+		return Double.parseDouble(getText());
+
+	}
+	
 	@Override
 	public void replaceText(int start, int end, String text) {
 
