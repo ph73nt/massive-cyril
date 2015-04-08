@@ -23,7 +23,9 @@ public class UI extends Application {
 //		grid = demogForm.getForm();
 		
 		final InjectionForm injectionForm = new InjectionForm();
+		injectionForm.addInjectionListener(gfrc);
 		grid = injectionForm.getForm();
+		
 	}
 
 	@Override

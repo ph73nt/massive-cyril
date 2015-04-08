@@ -11,26 +11,23 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import jfxtras.scene.control.LocalTimePicker;
 import couk.nucmedone.massivecyril.labtest.Injection;
+import couk.nucmedone.massivecyril.labtest.InjectionListener;
+import couk.nucmedone.massivecyril.ui.GFRControl;
 
 public class InjectionForm extends Form {
 
-	private TextField batch;
-	private TextField lot;
-	private DatePicker refDate;
-	private DatePicker injDate;
+	private FloatTextField bkgCounts;
 	private FloatTextField empty;
 	private FloatTextField full;
-	private FloatTextField preAssay;
-	private FloatTextField bkgCounts;
+	private DatePicker injDate;
 	private LocalTimePicker injTime;
+	private InjectionListener listener;
 	private FloatTextField postAssay;
+	private FloatTextField preAssay;
 
 	@Override
 	protected void init() {
 
-		batch = addTextField("Batch");
-		lot = addTextField("Lot");
-		refDate = addDateField("Reference date");
 		empty = addFloatField("Empty syringe weight (g)");
 		full = addFloatField("Full syringe weight (g)");
 		bkgCounts = addFloatField("Background counts");
@@ -79,15 +76,22 @@ public class InjectionForm extends Form {
 				final double fullWeight = full.getValue();
 				injection.setFullWeight(fullWeight, fullWeight/1000);
 
-				//TODO: inform injection listener of update
+				//Inform injection listener of update
+				listener.injectionUpdate(injection);
 				
 				//TODO: check standards match... or are new
-				
+				// TODO: Set enable/disable next button with field validation
 				
 			}
 		});
 		
 		return nxtBtn;
+		
+	}
+
+	public void addInjectionListener(InjectionListener listener) {
+		
+		this.listener = listener;
 		
 	}
 			
