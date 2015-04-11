@@ -1,4 +1,4 @@
-package couk.nucmedone.massivecyril.ui;
+package couk.nucmedone.massivecyril.ui.forms;
 
 import javafx.scene.control.TextField;
 
