@@ -12,6 +12,7 @@ import couk.nucmedone.common.base.DoublePlus;
 import couk.nucmedone.common.nuclides.Nuclides;
 import couk.nucmedone.common.stock.Phial;
 import couk.nucmedone.common.stock.PhialListener;
+import couk.nucmedone.massivecyril.ui.forms.listeners.StockNextListener;
 
 public class StockForm extends Form {
 
@@ -34,11 +35,14 @@ public class StockForm extends Form {
 	private DatePicker refDatePicker;
 	
 	private PhialListener pl;
+	private StockNextListener nl;
 	
 	public void addPhialListener(PhialListener listener) {
-		
 		pl = listener;
-		
+	}
+	
+	public void addNextButtonListener(StockNextListener listener){
+		nl = listener;
 	}
 	
 	@Override
@@ -94,6 +98,8 @@ public class StockForm extends Form {
 				ld = refDatePicker.getValue();
 				Calendar refCal = Calendar.getInstance();
 				refCal.set(ld.getYear(), ld.getMonthValue(), ld.getDayOfMonth());
+				
+				nl.StockNextPressed();
 				
 			}
 			
