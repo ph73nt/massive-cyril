@@ -8,11 +8,9 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
-import javafx.scene.control.TextField;
 import jfxtras.scene.control.LocalTimePicker;
 import couk.nucmedone.massivecyril.labtest.Injection;
 import couk.nucmedone.massivecyril.labtest.InjectionListener;
-import couk.nucmedone.massivecyril.ui.GFRControl;
 
 public class InjectionForm extends Form {
 
