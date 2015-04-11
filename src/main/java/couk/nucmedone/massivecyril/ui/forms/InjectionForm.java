@@ -77,7 +77,6 @@ public class InjectionForm extends Form {
 				//Inform injection listener of update
 				listener.injectionUpdate(injection);
 				
-				//TODO: check standards match... or are new
 				// TODO: Set enable/disable next button with field validation
 				
 			}
