@@ -5,6 +5,7 @@ import javafx.application.Platform;
 import javafx.scene.Scene;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
+import couk.nucmedone.massivecyril.ui.forms.CountFileViewer;
 import couk.nucmedone.massivecyril.ui.forms.DemogForm;
 import couk.nucmedone.massivecyril.ui.forms.InjectionForm;
 import couk.nucmedone.massivecyril.ui.forms.StockForm;
@@ -15,6 +16,7 @@ public class UI extends Application implements StockNextListener, InjectNextList
 
 	private GridPane grid;
 	private final GFRControl gfrc;
+	private final CountFileViewer cfv;
 	private final DemogForm demogForm;
 	private final StockForm stockform;
 	private final InjectionForm injectionForm;
@@ -37,6 +39,9 @@ public class UI extends Application implements StockNextListener, InjectNextList
 		
 		injectionForm = new InjectionForm();
 		injectionForm.addInjectionListener(gfrc);
+		
+		cfv = new CountFileViewer();
+		grid = cfv.getForm();
 		
 	}
 
